@@ -16,5 +16,22 @@ module Eventbrite
       end
       yield(self) if block_given?
     end
+
+    # @return [String]
+    def user_agent
+      @user_agent ||= "Eventbrite Ruby Gem #{Eventbrite::Version}"
+    end
+
+    # @return [Hash]
+    def credentials
+      {
+        :token => oauth_token
+      }
+    end
+
+    # @return [Boolean]
+    def credentials?
+      credentials.values.all?
+    end
   end
 end
