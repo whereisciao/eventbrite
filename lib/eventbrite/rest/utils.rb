@@ -19,6 +19,10 @@ module Eventbrite
         end
       end
 
+      def extract_user_id(user)
+        user.nil? ? 'me' : extract_id(user)
+      end
+
       # @param request_method [Symbol]
       # @param path [String]
       # @param options [Hash]
