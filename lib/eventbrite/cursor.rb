@@ -26,15 +26,23 @@ module Eventbrite
 
   private
 
+    def current_page
+      @attrs[:pagination][:page_number] || -1
+    end
+
+    def page_count
+      @attrs[:pagination][:page_count] || -1
+    end
+
     # @return [Integer]
     def next_page
-      @attrs[:next_page] || -1
+      @attrs[:pagination][:page_number] ? @attrs[:pagination][:page_number] + 1 : -1
     end
     alias_method :next, :next_page
 
     # @return [Boolean]
     def last?
-      next_page.zero?
+      current_page == page_count
     end
 
     # @return [Hash]
