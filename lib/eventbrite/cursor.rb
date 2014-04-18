@@ -3,7 +3,7 @@ require 'eventbrite/enumerable'
 module Eventbrite
   class Cursor
     include Eventbrite::Enumerable
-    attr_reader :attrs
+    attr_reader :attrs, :collection
     alias_method :to_h, :attrs
 
     # Initializes a new Cursor

@@ -8,6 +8,8 @@ module Eventbrite
     include Eventbrite::Changeable
 
     attr_reader :resource_uri, :first_name, :last_name, :email, :status
-    object_attr_reader :Resource, :event
+    object_attr_reader :Resource,  :event
+    object_attr_reader :Attendees, :attendees
+    object_attr_reader :Cost, :cost
   end
 end
