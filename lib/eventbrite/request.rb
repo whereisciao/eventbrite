@@ -1,3 +1,5 @@
+require 'eventbrite/cursor'
+
 module Eventbrite
   class Request
     attr_accessor :client, :request_method, :path, :options
@@ -16,10 +18,25 @@ module Eventbrite
     end
 
     # @param klass [Class]
-    # @param request [Twitter::Request]
+    # @param request [Eventbrite::Request]
     # @return [Object]
     def perform_with_object(klass)
       klass.new(perform)
+    end
+
+    # @param klass [Class]
+    # @return [Array]
+    def perform_with_objects(klass)
+      perform.collect do |element|
+        klass.new(element)
+      end
+    end
+
+    # @param collection_name [Symbol]
+    # @param klass [Class]
+    # @return [Eventbrite::Cursor]
+    def perform_with_cursor(collection_name, klass = nil)
+      Eventbrite::Cursor.new(perform, collection_name.to_sym, klass, self)
     end
   end
 end

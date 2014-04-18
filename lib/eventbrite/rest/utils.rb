@@ -4,7 +4,7 @@ module Eventbrite
   module REST
     module Utils
       URI_SUBSTRING = '://'
-      DEFAULT_CURSOR = -1
+      DEFAULT_CURSOR = 1
 
       def extract_id(object)
         case object
@@ -27,6 +27,30 @@ module Eventbrite
         request = Eventbrite::Request.new(self, request_method, path, options)
         request.perform_with_object(klass)
       end
+
+      # @param request_method [Symbol]
+      # @param path [String]
+      # @param options [Hash]
+      # @param klass [Class]
+      def perform_with_objects(request_method, path, options, klass)
+        request = Eventbrite::Request.new(self, request_method, path, options)
+        request.perform_with_objects(klass)
+      end
+
+      # @param request_method [Symbol]
+      # @param path [String]
+      # @param options [Hash]
+      # @param klass [Class]
+      def perform_with_cursor(request_method, path, options, collection_name, klass = nil) # rubocop:disable ParameterLists
+        merge_default_cursor!(options)
+        request = Eventbrite::Request.new(self, request_method, path, options)
+        request.perform_with_cursor(collection_name.to_sym, klass)
+      end
+
+      def merge_default_cursor!(options)
+        options[:page] = DEFAULT_CURSOR unless options[:page]
+      end
+
     end
   end
 end
