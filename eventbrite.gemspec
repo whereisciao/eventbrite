@@ -12,7 +12,6 @@ Gem::Specification.new do |spec|
   spec.description = %q{A Ruby wrapper for the Eventbrite REST API}
 
   # Gems
-  spec.add_dependency 'hashie', '~> 1.1.0'
   spec.add_dependency 'simple_oauth', '~> 0.2.0'
   spec.add_dependency 'addressable', '~> 2.3'
   spec.add_dependency 'faraday', '~> 0.9.0'
