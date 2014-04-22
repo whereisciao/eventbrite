@@ -11,9 +11,7 @@ module Eventbrite
         when ::Integer
           object
         when ::String
-          object.split('/').last.to_i
-        when URI
-          object.path.split('/').last.to_i
+          object
         when Eventbrite::Identity
           object.id
         end
