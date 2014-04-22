@@ -1,0 +1,3 @@
+# Eventbrite Ruby Gem
+
+Heavily inspired by the Ruby [Twitter](https://github.com/sferik/twitter) Gem.
