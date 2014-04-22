@@ -24,6 +24,10 @@ module Eventbrite
       self.attrs = attrs
     end
 
+    def size
+      @attrs[:pagination][:object_count] || -1
+    end
+
   private
 
     def current_page
