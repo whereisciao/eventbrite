@@ -135,4 +135,21 @@ describe Eventbrite::REST::Events do
     it { subject; a_get('/v3/events/123456789/access_codes/').with(:query => {page:1}).should have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::AccessCode) }
   end
+
+  describe '.event_transfers' do
+    subject { client.event_transfers('123456789') }
+
+    before do
+      stub_get('/v3/events/123456789/transfers/').
+        with(:query => {page:1}).
+        to_return(
+          :body => fixture('event_transfers.json'),
+          :headers => {:content_type => 'application/json; charset=utf-8'}
+        )
+    end
+
+    it_behaves_like 'a cursor'
+    it { subject; a_get('/v3/events/123456789/transfers/').with(:query => {page:1}).should have_been_made }
+    its(:first) { should be_a_kind_of(Eventbrite::Transfer) }
+  end
 end
