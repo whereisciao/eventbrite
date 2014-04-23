@@ -118,4 +118,21 @@ describe Eventbrite::REST::Events do
     it { subject; a_get('/v3/events/123456789/discounts/').with(:query => {page:1}).should have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Discount) }
   end
+
+  describe '.event_access_codes' do
+    subject { client.event_access_codes('123456789') }
+
+    before do
+      stub_get('/v3/events/123456789/access_codes/').
+        with(:query => {page:1}).
+        to_return(
+          :body => fixture('event_access_codes.json'),
+          :headers => {:content_type => 'application/json; charset=utf-8'}
+        )
+    end
+
+    it_behaves_like 'a cursor'
+    it { subject; a_get('/v3/events/123456789/access_codes/').with(:query => {page:1}).should have_been_made }
+    its(:first) { should be_a_kind_of(Eventbrite::AccessCode) }
+  end
 end

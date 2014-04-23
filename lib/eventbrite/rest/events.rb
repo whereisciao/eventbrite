@@ -35,6 +35,10 @@ module Eventbrite
       def event_discounts(event, options = {})
         perform_with_cursor(:get, "/v3/events/#{extract_id(event)}/discounts/", options, :discounts, Eventbrite::Discount)
       end
+
+      def event_access_codes(event, options = {})
+        perform_with_cursor(:get, "/v3/events/#{extract_id(event)}/access_codes/", options, :access_codes, Eventbrite::AccessCode)
+      end
     end
   end
 end
