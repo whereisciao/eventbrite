@@ -30,8 +30,9 @@ describe Eventbrite::REST::Events do
         )
     end
 
-    it { subject; a_get('/v3/events/123456789/orders/').with(:query => {page:1}).should have_been_made }
     it_behaves_like 'a cursor'
+    it { subject; a_get('/v3/events/123456789/orders/').with(:query => {page:1}).should have_been_made }
+    its(:first) { should be_a_kind_of(Eventbrite::Order) }
   end
 
   describe '.event_attendees' do
