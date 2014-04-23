@@ -35,5 +35,19 @@ describe Eventbrite::REST::Events do
   end
 
   describe '.event_attendees' do
+    subject { client.event_attendees('123456789') }
+
+    before do
+      stub_get('/v3/events/123456789/attendees/').
+        with(:query => {page:1}).
+        to_return(
+          :body => fixture('event_attendees.json'),
+          :headers => {:content_type => 'application/json; charset=utf-8'}
+        )
+    end
+
+    it_behaves_like 'a cursor'
+    it { subject; a_get('/v3/events/123456789/attendees/').with(:query => {page:1}).should have_been_made }
+    its(:first) { should be_a_kind_of(Eventbrite::Attendee) }
   end
 end
