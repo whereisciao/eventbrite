@@ -1,0 +1,104 @@
+{
+    "pagination": {
+        "object_count": 1,
+        "page_number": 1,
+        "page_size": 50,
+        "page_count": 1
+    },
+    "orders": [
+        {
+            "event": {
+                "resource_uri": "https://www.eventbriteapi.com/v3/events/10583189605/",
+                "id": "10583189605",
+                "name": {
+                    "text": "API Test Example",
+                    "html": "API Test Example"
+                },
+                "url": "http://www.eventbrite.com/e/api-test-example-tickets-10583189605"
+            },
+            "attendees": [
+                {
+                    "event": {
+                        "resource_uri": "https://www.eventbriteapi.com/v3/events/10583189605/",
+                        "id": "10583189605",
+                        "name": {
+                            "text": "API Test Example",
+                            "html": "API Test Example"
+                        },
+                        "url": "http://www.eventbrite.com/e/api-test-example-tickets-10583189605"
+                    },
+                    "order": {
+                        "resource_uri": "https://www.eventbriteapi.com/v3/orders/253495655/",
+                        "id": "253495655"
+                    },
+                    "id": "321106983",
+                    "changed": "2014-02-11T02:52:11Z",
+                    "created": "2014-02-11T02:52:10Z",
+                    "email": null,
+                    "quantity": 1,
+                    "status": "Attending",
+                    "ticket_id": "23511645",
+                    "profile": {
+                        "first_name": "John",
+                        "last_name": "Doe",
+                        "email": "johndoe@eventbrite.com"
+                    },
+                    "barcodes": null,
+                    "answers": null,
+                    "costs": {
+                        "payment_fee": {
+                            "currency": "USD",
+                            "display": "$0.00",
+                            "value": 0
+                        },
+                        "gross": {
+                            "currency": "USD",
+                            "display": "$0.00",
+                            "value": 0
+                        },
+                        "eventbrite_fee": {
+                            "currency": "USD",
+                            "display": "$0.00",
+                            "value": 0
+                        },
+                        "tax": {
+                            "currency": "USD",
+                            "display": "$0.00",
+                            "value": 0
+                        }
+                    }
+                }
+            ],
+            "resource_uri": "https://www.eventbriteapi.com/v3/orders/253495655/",
+            "id": "253495655",
+            "changed": "2014-02-10T18:52:10Z",
+            "created": "2014-02-10T18:52:10Z",
+            "costs": {
+                "payment_fee": {
+                    "currency": "USD",
+                    "display": "$0.00",
+                    "value": 0
+                },
+                "gross": {
+                    "currency": "USD",
+                    "display": "$0.00",
+                    "value": 0
+                },
+                "eventbrite_fee": {
+                    "currency": "USD",
+                    "display": "$0.00",
+                    "value": 0
+                },
+                "tax": {
+                    "currency": "USD",
+                    "display": "$0.00",
+                    "value": 0
+                }
+            },
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "johndoe@eventbrite.com",
+            "status": "placed"
+        }
+    ]
+}
