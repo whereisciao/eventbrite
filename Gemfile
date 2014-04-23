@@ -23,6 +23,7 @@ group :test do
   gem 'yardstick'
   gem 'guard'
   gem 'guard-rspec'
+  gem 'psych', '>= 2.0.5'
 end
 
 gemspec

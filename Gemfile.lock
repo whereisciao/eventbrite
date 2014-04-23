@@ -5,10 +5,9 @@ PATH
       addressable (~> 2.3)
       equalizer (~> 0.0.9)
       faraday (~> 0.9.0)
-      hashie (~> 1.1.0)
       http (~> 0.6.0)
       http_parser.rb (~> 0.6.0)
-      json (~> 1.8)
+      json (>= 1.7.7)
       memoizable (~> 0.4.0)
       naught (~> 1.0)
       simple_oauth (~> 0.2.0)
@@ -53,7 +52,6 @@ GEM
     guard-rspec (4.2.8)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
-    hashie (1.1.0)
     http (0.6.0)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
@@ -83,6 +81,7 @@ GEM
     pry-stack_explorer (0.4.9.1)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
+    psych (2.0.5)
     rainbow (2.0.0)
     rake (10.3.0)
     rb-fsevent (0.9.4)
@@ -141,6 +140,7 @@ DEPENDENCIES
   mime-types (~> 1.25)
   pry
   pry-stack_explorer
+  psych (>= 2.0.5)
   rake
   redcarpet
   rspec (>= 2.14)
