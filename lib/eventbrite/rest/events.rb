@@ -8,6 +8,10 @@ module Eventbrite
     module Events
       include Eventbrite::REST::Utils
 
+      def event_search(options = {})
+        perform_with_cursor(:get, "/v3/events/search/", options, :events, Eventbrite::Event)
+      end
+
       def event_details(event, options = {})
         perform_with_object(:get, "/v3/events/#{extract_id(event)}/", options, Eventbrite::Event)
       end

@@ -1,0 +1,171 @@
+{
+    "pagination": {
+        "object_count": 146101,
+        "page_number": 1,
+        "page_size": 50,
+        "page_count": 2923
+    },
+    "events": [
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/6230534697/",
+            "name": {
+                "text": "The Healthy Cleansing Webinar: How to supercharge your metabolism and vitality.",
+                "html": "The Healthy Cleansing Webinar: How to supercharge your metabolism and vitality."
+            },
+            "description": {
+                "text": "Imagine feeling healthier than you have in years... \nFeeling more vital, more alive, and filled with positive energy... \nImagine losing that extra stubborn weight, fitting into your favorite clothes. \u00a0\u00a0 Or just feeling \"lighter\" and less toxic. \nWouldn't that make life a lot more enjoyable? \nMost people don't realize that the health of your skin and hair is proportional to the health of your intestinal system. A healthy intestinal system is the cornerstone of good health. \nSo how do you do a proper cleanse? And what are the two most important steps that most people forget when it comes to cleansing successfully? \nThat's exactly what I will explain in this webinar recording: Healthly Cleansing Methods: How to do a proper internal cleanse to supercharge your metabolism. \nIn this webinar you will learn how to safely do 6 different kinds of cleanses: \n\nScientific Juice Fasting (Hands-down the most powerful healing cleanse known to humanity)\nThe 10-Day Master Cleanse\nThe 1-Day Weekly Cleanse\nThe Gall-Bladder Flush\u00a0\nThe 60-Day Detox Cleanse\nSmoothie Cleansing\n\n Online International Webinar: You can join and listen to this from anywhere in the world because it's online. \nThe Live Webinar was recorded on April 24th, 2013. \u00a0Your Ticket will give you access to the RECORDING only!",
+                "html": "<P><SPAN STYLE=\"font-size: small;\">Imagine feeling healthier than you have in years...<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: small;\">Feeling more vital, more alive, and filled with positive energy...<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: small;\">Imagine losing that extra stubborn weight, fitting into your favorite clothes. \u00a0\u00a0<BR>Or just feeling \"lighter\" and less toxic.<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: small;\">Wouldn't that make life a lot more enjoyable?<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: small;\">Most people don't realize that the health of your skin and hair is proportional to the health of your intestinal system. A healthy intestinal system is the cornerstone of good health.<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: small;\">So how do you do a proper cleanse? And what are the two most important steps that most people forget when it comes to cleansing successfully?<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: small;\">That's exactly what I will explain in this webinar recording: Healthly Cleansing Methods: How to do a proper internal cleanse to supercharge your metabolism.<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: small;\">In this webinar you will learn how to safely do 6 different kinds of cleanses:<\/SPAN><\/P>\r\n<OL>\r\n<LI><SPAN STYLE=\"font-size: small;\">Scientific Juice Fasting (Hands-down the most powerful healing cleanse known to humanity)<\/SPAN><\/LI>\r\n<LI><SPAN STYLE=\"font-size: small;\">The 10-Day Master Cleanse<\/SPAN><\/LI>\r\n<LI><SPAN STYLE=\"font-size: small;\">The 1-Day Weekly Cleanse<\/SPAN><\/LI>\r\n<LI><SPAN STYLE=\"font-size: small;\">The Gall-Bladder Flush\u00a0<\/SPAN><\/LI>\r\n<LI><SPAN STYLE=\"font-size: small;\">The 60-Day Detox Cleanse<\/SPAN><\/LI>\r\n<LI><SPAN STYLE=\"font-size: small;\">Smoothie Cleansing<\/SPAN><\/LI>\r\n<\/OL>\r\n<P><BR><SPAN STYLE=\"font-size: small;\"><STRONG>Online International Webinar:<\/STRONG> You can join and listen to this from anywhere in the world because it's online.<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: medium;\">The Live Webinar was recorded on April 24th, 2013. \u00a0Your Ticket will give you access to the RECORDING only!<\/SPAN><\/P>\r\n<P><SPAN STYLE=\"font-size: medium;\">\u00a0<\/SPAN><\/P>\r\n<P>\u00a0<\/P>"
+            },
+            "organizer": {
+                "description": {
+                    "text": null,
+                    "html": null
+                },
+                "id": "2764974278",
+                "name": "Dr. Blaise T. Ryan",
+                "url": "http://www.eventbrite.ca/o/dr-blaise-t-ryan-2764974278"
+            },
+            "venue": null,
+            "ticket_classes": [
+                {
+                    "id": "18138669",
+                    "name": "The Healthy Cleansing Webinar",
+                    "cost": {
+                        "currency": "CAD",
+                        "display": "20.00 CAD",
+                        "value": 2000
+                    },
+                    "fee": {
+                        "currency": "CAD",
+                        "display": "1.49 CAD",
+                        "value": 149
+                    },
+                    "free": false,
+                    "minimum_quantity": 1,
+                    "maximum_quantity": null,
+                    "quantity_total": null,
+                    "quantity_sold": null,
+                    "sales_start": null,
+                    "sales_end": "2014-04-24T19:00:00Z"
+                }
+            ],
+            "category": null,
+            "format": {
+                "resource_uri": "https://www.eventbriteapi.com/v3/formats/9/",
+                "id": "9",
+                "name": "Class, Training, or Workshop",
+                "short_name": "Class"
+            },
+            "id": "6230534697",
+            "url": "http://healthycleansing.eventbrite.ca/?aff=ebapi",
+            "logo_url": "http://ebmedia.eventbrite.com/s3-build/images/1439913/42534477642/3/logo.jpg",
+            "start": {
+                "timezone": "America/Toronto",
+                "local": "2014-04-24T20:00:00",
+                "utc": "2014-04-25T00:00:00Z"
+            },
+            "end": {
+                "timezone": "America/Toronto",
+                "local": "2014-04-24T21:30:00",
+                "utc": "2014-04-25T01:30:00Z"
+            },
+            "created": "2013-04-10T12:04:46Z",
+            "changed": "2013-05-30T12:31:33Z",
+            "capacity": 100,
+            "status": "live"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/6198346421/",
+            "name": {
+                "text": "Toad Fondo",
+                "html": "Toad Fondo"
+            },
+            "description": {
+                "text": "Take a scenic ride through the Ojai Valley. \u00a0Mix in new and old friends. \u00a0Throw in roadside snacks and a farm fresh feast after the finish. \u00a0Top it off with a little media hype and you are riding in the exciting energy of the Toad Fondo! \n\u00a0 \nWhen: \u00a0 \u00a0 Saturday, April 26 , 2014 at 8 am \n\u00a0 \nStart: \u00a0 \u00a0 \u00a0The MOB Shop, 110 W Ojai Ave, Ojai, CA 93023\u00a0 \n\u00a0 \nRegister here or at www.toadfondo.org \n\u00a0 \nRide and raise funds for high school students to attend The Thacher School!",
+                "html": "<P CLASS=\"paragraph_style_2\" STYLE=\"margin-right: 36px; opacity: 1; padding-bottom: 0px; padding-top: 0pt;\"><SPAN STYLE=\"font-size: 18px; line-height: 21px;\">Take a scenic ride through the Ojai Valley. \u00a0Mix in new and old friends. \u00a0Throw in roadside snacks and a farm fresh feast after the finish. \u00a0Top it off with a little media hype and you are riding in the exciting energy of the Toad Fondo!<\/SPAN><\/P>\r\n<P CLASS=\"paragraph_style_3\" STYLE=\"font-size: 18px; line-height: 21px; margin-right: 36px; opacity: 1; padding-bottom: 0pt;\">\u00a0<\/P>\r\n<P CLASS=\"paragraph_style_3\" STYLE=\"font-size: 18px; line-height: 21px; margin-right: 36px; opacity: 1; padding-bottom: 0pt;\">When: \u00a0 \u00a0 Saturday, April 26 , 2014 at 8 am<\/P>\r\n<P CLASS=\"paragraph_style_3\" STYLE=\"font-size: 18px; line-height: 21px; margin-right: 36px; opacity: 1; padding-bottom: 0pt;\">\u00a0<\/P>\r\n<P CLASS=\"paragraph_style_3\" STYLE=\"font-size: 18px; line-height: 21px; margin-right: 36px; opacity: 1; padding-bottom: 0pt;\">Start: \u00a0 \u00a0 \u00a0The MOB Shop, 110 W Ojai Ave, Ojai, CA 93023\u00a0<\/P>\r\n<P CLASS=\"paragraph_style_3\" STYLE=\"font-size: 18px; line-height: 21px; margin-right: 36px; opacity: 1; padding-bottom: 0pt;\">\u00a0<\/P>\r\n<P CLASS=\"paragraph_style_3\" STYLE=\"font-size: 18px; line-height: 21px; margin-right: 36px; opacity: 1; padding-bottom: 0pt;\"><SPAN STYLE=\"font-size: x-large;\"><SPAN STYLE=\"font-family: TimesNewRomanPSMT, 'Times New Roman', serif; font-size: large;\"><SPAN STYLE=\"line-height: 21px;\">Register here or at www.toadfondo.org<\/SPAN><\/SPAN><\/SPAN><\/P>\r\n<P CLASS=\"paragraph_style_3\" STYLE=\"font-size: 18px; line-height: 21px; margin-right: 36px; opacity: 1; padding-bottom: 0pt;\">\u00a0<\/P>\r\n<P CLASS=\"paragraph_style_3\" STYLE=\"font-size: 18px; line-height: 21px; margin-right: 36px; opacity: 1; padding-bottom: 0pt;\">Ride and raise funds for high school students to attend The Thacher School!<\/P>"
+            },
+            "organizer": {
+                "description": {
+                    "text": "The Toad Fondo, is a charity ride, to raise funds for students to attend The Thacher School in Ojai, where 27% of students receive aid. \u00a0The Thacher School is a 501c3 non-profit\r\n\u00a0",
+                    "html": "<P>The Toad Fondo, is a charity ride, to raise funds for students to attend The Thacher School in Ojai, where 27% of students receive aid. \u00a0The Thacher School is a 501c3 non-profit<\/P>\r\n<DIV>\u00a0<\/DIV>"
+                },
+                "id": "3659495399",
+                "name": "Toad Fondo",
+                "url": "http://www.eventbrite.com/o/toad-fondo-3659495399"
+            },
+            "venue": {
+                "id": "3316415",
+                "address": {
+                    "country_name": "United States",
+                    "city": "Ojai",
+                    "region": "CA",
+                    "address_1": "110 West Ojai Avenue",
+                    "country": "US"
+                },
+                "latitude": "34.447947",
+                "longitude": "-119.247439",
+                "name": "Toad Fondo at The MOB Shop"
+            },
+            "ticket_classes": [
+                {
+                    "id": "18099843",
+                    "name": "Rider",
+                    "cost": {
+                        "currency": "USD",
+                        "display": "$250.00",
+                        "value": 25000
+                    },
+                    "fee": {
+                        "currency": "USD",
+                        "display": "$7.24",
+                        "value": 724
+                    },
+                    "free": false,
+                    "minimum_quantity": 1,
+                    "maximum_quantity": null,
+                    "quantity_total": null,
+                    "quantity_sold": null,
+                    "sales_start": null,
+                    "sales_end": "2013-10-12T07:00:00Z"
+                },
+                {
+                    "id": "18190215",
+                    "name": "Donation",
+                    "cost": null,
+                    "fee": null,
+                    "free": true,
+                    "minimum_quantity": 1,
+                    "maximum_quantity": null,
+                    "quantity_total": null,
+                    "quantity_sold": null,
+                    "sales_start": null,
+                    "sales_end": "2014-04-26T05:00:00Z"
+                }
+            ],
+            "category": {
+                "resource_uri": "https://www.eventbriteapi.com/v3/categories/108/",
+                "id": "108",
+                "name": "Sports & Fitness",
+                "short_name": "Sports & Fitness"
+            },
+            "format": null,
+            "id": "6198346421",
+            "url": "http://toadfondo.eventbrite.com/?aff=ebapi",
+            "logo_url": "http://ebmedia.eventbrite.com/s3-build/images/2716453/6802483379/1/logo.jpg",
+            "start": {
+                "timezone": "America/Los_Angeles",
+                "local": "2014-04-26T08:00:00",
+                "utc": "2014-04-26T15:00:00Z"
+            },
+            "end": {
+                "timezone": "America/Los_Angeles",
+                "local": "2014-04-26T16:00:00",
+                "utc": "2014-04-26T23:00:00Z"
+            },
+            "created": "2013-04-08T16:35:13Z",
+            "changed": "2013-10-01T11:50:46Z",
+            "capacity": 200,
+            "status": "live"
+        }
+    ]
+}
