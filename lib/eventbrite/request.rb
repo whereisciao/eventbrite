@@ -24,14 +24,6 @@ module Eventbrite
       klass.new(perform)
     end
 
-    # @param klass [Class]
-    # @return [Array]
-    def perform_with_objects(klass)
-      perform.collect do |element|
-        klass.new(element)
-      end
-    end
-
     # @param collection_name [Symbol]
     # @param klass [Class]
     # @return [Eventbrite::Cursor]

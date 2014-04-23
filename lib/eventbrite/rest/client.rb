@@ -50,16 +50,6 @@ module Eventbrite
         request(:get, path, params, headers)
       end
 
-      # @return [Boolean]
-      def bearer_token?
-        !!bearer_token
-      end
-
-      # @return [Boolean]
-      def credentials?
-        super || bearer_token?
-      end
-
     # private
       def connection
         @connection ||= Faraday.new(ENDPOINT, connection_options)

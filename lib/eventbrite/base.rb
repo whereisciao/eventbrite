@@ -21,13 +21,6 @@ module Eventbrite
         end
       end
 
-      def predicate_attr_reader(*attrs)
-        attrs.each do |attr|
-          define_predicate_method(attr)
-          deprecate_attribute_method(attr)
-        end
-      end
-
       # Define object methods from attributes
       #
       # @param klass [Symbol]
