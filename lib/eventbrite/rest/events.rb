@@ -31,6 +31,10 @@ module Eventbrite
       def event_attendees_detail(event, attendee, options = {})
         perform_with_object(:get, "/v3/events/#{extract_id(event)}/attendees/#{extract_id(attendee)}/", options, Eventbrite::Attendee)
       end
+
+      def event_discounts(event, options = {})
+        perform_with_cursor(:get, "/v3/events/#{extract_id(event)}/discounts/", options, :discounts, Eventbrite::Discount)
+      end
     end
   end
 end
