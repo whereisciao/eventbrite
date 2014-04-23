@@ -1,0 +1,59 @@
+{
+    "resource_uri": "https://www.eventbriteapi.com/v3/events/9294830087/",
+    "name": {
+        "text": "Example Event",
+        "html": "Example Event"
+    },
+    "description": {
+        "text": "Description of the Example Event",
+        "html": "<P>Description of the Example Event</P>"
+    },
+    "organizer": {
+        "description": {
+            "text": "Description of the Example Organizer",
+            "html": "<P&gtDescription of the Example Organizer</P>"
+        },
+        "id": "1667263718",
+        "name": "Example Organizer"
+    },
+    "venue": {
+        "id": "545454",
+        "address": {
+            "city": "San Francisco",
+            "country": "US",
+            "region": "CA",
+            "address_1": "651 Brannan",
+            "address_2": "Suite 110",
+            "country_name": "United States"
+        },
+        "latitude": "42.3618641",
+        "longitude": "-71.0905626",
+        "name": "Eventbrite HQ"
+    },
+    "ticket_classes": [
+        {
+            "id": "22315349",
+            "name": "General Admission",
+            "cost": null,
+            "fee": null,
+            "currency": null,
+            "free": true,
+            "minimum_quantity": 1,
+            "maximum_quantity": null,
+            "quantity_total": 19999,
+            "quantity_sold": 1000,
+            "sales_start": null,
+            "sales_end": "2014-12-01T22:59:59Z"
+        }
+    ],
+    "id": "9294830087",
+    "url": "http://www.eventbrite.com/e/example-event-tickets-9294830087",
+    "start": "2014-12-01T23:59:59Z",
+    "end": "2014-12-02T23:59:00Z",
+    "created": "2013-11-12T04:36:31Z",
+    "changed": "2014-02-10T18:11:39Z",
+    "timezone": "America/Los_Angeles",
+    "capacity": 19999,
+    "categories": [],
+    "status": "live"
+}
