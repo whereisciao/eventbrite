@@ -21,4 +21,21 @@ describe Eventbrite::REST::Users do
       it { should be_a_kind_of(Eventbrite::User) }
     end
   end
+
+  describe '.user_orders' do
+    subject { client.user_orders('123456789') }
+
+    before do
+      stub_get('/v3/users/123456789/orders/').
+        with(:query => {page:1}).
+        to_return(
+          :body => fixture('user_orders.json'),
+          :headers => {:content_type => 'application/json; charset=utf-8'}
+        )
+    end
+
+    it_behaves_like 'a cursor'
+    it { subject; a_get('/v3/users/123456789/orders/').with(:query => {page:1}).should have_been_made }
+    its(:first) { should be_a_kind_of(Eventbrite::Order) }
+  end
 end
