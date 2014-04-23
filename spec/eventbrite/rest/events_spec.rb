@@ -22,6 +22,22 @@ describe Eventbrite::REST::Events do
     end
   end
 
+  describe '.event_categories' do
+    subject { client.event_categories }
+
+    before do
+      stub_get('/v3/categories/').
+        to_return(
+          :body => fixture('event_categories.json'),
+          :headers => {:content_type => 'application/json; charset=utf-8'}
+        )
+    end
+
+    it { should be_a_kind_of(Array) }
+    it { subject; a_get('/v3/categories/').should have_been_made }
+    its(:first) { should be_a_kind_of(Eventbrite::Resource) }
+  end
+
   describe '.event_details' do
     subject { client.event_details('123456789') }
 
@@ -69,5 +85,20 @@ describe Eventbrite::REST::Events do
     it_behaves_like 'a cursor'
     it { subject; a_get('/v3/events/123456789/attendees/').with(:query => {page:1}).should have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Attendee) }
+  end
+
+  describe '.event_attendees_detail' do
+    subject { client.event_attendees_detail('10623123047','322951239') }
+
+    before do
+      stub_get('/v3/events/10623123047/attendees/322951239/').
+        to_return(
+          :body => fixture('event_attendees_detail.json'),
+          :headers => {:content_type => 'application/json; charset=utf-8'}
+        )
+    end
+
+    it { subject; a_get('/v3/events/10623123047/attendees/322951239/').should have_been_made }
+    it { should be_a_kind_of(Eventbrite::Attendee) }
   end
 end

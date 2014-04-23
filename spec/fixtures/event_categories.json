@@ -1,0 +1,124 @@
+{
+    "categories": [
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/103/",
+            "id": "103",
+            "name": "Music",
+            "short_name": "Music"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/101/",
+            "id": "101",
+            "name": "Business & Professional",
+            "short_name": "Business"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/110/",
+            "id": "110",
+            "name": "Food & Drink",
+            "short_name": "Food & Drink"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/113/",
+            "id": "113",
+            "name": "Community & Culture",
+            "short_name": "Community"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/105/",
+            "id": "105",
+            "name": "Performing & Visual Arts",
+            "short_name": "Arts"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/104/",
+            "id": "104",
+            "name": "Film, Media & Entertainment",
+            "short_name": "Film & Media"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/108/",
+            "id": "108",
+            "name": "Sports & Fitness",
+            "short_name": "Sports & Fitness"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/107/",
+            "id": "107",
+            "name": "Health & Wellness",
+            "short_name": "Health"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/102/",
+            "id": "102",
+            "name": "Science & Technology",
+            "short_name": "Science & Tech"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/109/",
+            "id": "109",
+            "name": "Travel & Outdoor",
+            "short_name": "Travel & Outdoor"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/111/",
+            "id": "111",
+            "name": "Charity & Causes",
+            "short_name": "Charity & Causes"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/114/",
+            "id": "114",
+            "name": "Religion & Spirituality",
+            "short_name": "Spirituality"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/115/",
+            "id": "115",
+            "name": "Family & Education",
+            "short_name": "Family & Education"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/116/",
+            "id": "116",
+            "name": "Seasonal & Holiday",
+            "short_name": "Holiday"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/112/",
+            "id": "112",
+            "name": "Government & Politics",
+            "short_name": "Government"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/106/",
+            "id": "106",
+            "name": "Fashion & Beauty",
+            "short_name": "Fashion"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/117/",
+            "id": "117",
+            "name": "Home & Lifestyle",
+            "short_name": "Home & Lifestyle"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/118/",
+            "id": "118",
+            "name": "Auto, Boat & Air",
+            "short_name": "Auto, Boat & Air"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/119/",
+            "id": "119",
+            "name": "Hobbies & Special Interest",
+            "short_name": "Hobbies"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/categories/199/",
+            "id": "199",
+            "name": "Other",
+            "short_name": "Other"
+        }
+    ]
+}
