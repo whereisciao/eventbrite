@@ -1,0 +1,60 @@
+{
+    "event": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/events/10623123047/",
+        "id": "10623123047",
+        "name": {
+            "text": "Test Event",
+            "html": "Test Event"
+        },
+        "url": "http://www.eventbrite.com/e/test-event-10623123047"
+    },
+    "order": {
+        "resource_uri": "https://www.eventbriteapi.com/v3/orders/255003399/",
+        "id": "255003399"
+    },
+    "team": null,
+    "id": "322951239",
+    "changed": "2014-02-13T23:52:43Z",
+    "created": "2014-02-13T23:52:23Z",
+    "email": null,
+    "quantity": 1,
+    "status": "Attending",
+    "ticket_id": "23598121",
+    "profile": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "JohnDoe@gmail.com"
+    },
+    "barcodes": [
+        {
+            "status": "unused",
+            "barcode": "255003399322951239001",
+            "checkin_type": 0,
+            "created": "2014-02-13T23:52:43Z",
+            "changed": "2014-02-13T23:52:43Z"
+        }
+    ],
+    "answers": null,
+    "costs": {
+        "payment_fee": {
+            "currency": "USD",
+            "display": "$0.00",
+            "value": 0
+        },
+        "gross": {
+            "currency": "USD",
+            "display": "$0.00",
+            "value": 0
+        },
+        "eventbrite_fee": {
+            "currency": "USD",
+            "display": "$0.00",
+            "value": 0
+        },
+        "tax": {
+            "currency": "USD",
+            "display": "$0.00",
+            "value": 0
+        }
+    }
+}
