@@ -20,16 +20,16 @@ module Eventbrite
         perform_with_object(:get, "/v3/events/#{extract_id(event)}/", options, Eventbrite::Event)
       end
 
-      def event_orders(event, options = {})
-        perform_with_cursor(:get, "/v3/events/#{extract_id(event)}/orders/", options, :orders, Eventbrite::Order)
-      end
-
       def event_attendees(event, options = {})
         perform_with_cursor(:get, "/v3/events/#{extract_id(event)}/attendees/", options, :attendees, Eventbrite::Attendee)
       end
 
       def event_attendees_detail(event, attendee, options = {})
         perform_with_object(:get, "/v3/events/#{extract_id(event)}/attendees/#{extract_id(attendee)}/", options, Eventbrite::Attendee)
+      end
+
+      def event_orders(event, options = {})
+        perform_with_cursor(:get, "/v3/events/#{extract_id(event)}/orders/", options, :orders, Eventbrite::Order)
       end
 
       def event_discounts(event, options = {})
