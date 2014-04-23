@@ -101,4 +101,21 @@ describe Eventbrite::REST::Events do
     it { subject; a_get('/v3/events/10623123047/attendees/322951239/').should have_been_made }
     it { should be_a_kind_of(Eventbrite::Attendee) }
   end
+
+  describe '.event_discounts' do
+    subject { client.event_discounts('123456789') }
+
+    before do
+      stub_get('/v3/events/123456789/discounts/').
+        with(:query => {page:1}).
+        to_return(
+          :body => fixture('event_discounts.json'),
+          :headers => {:content_type => 'application/json; charset=utf-8'}
+        )
+    end
+
+    it_behaves_like 'a cursor'
+    it { subject; a_get('/v3/events/123456789/discounts/').with(:query => {page:1}).should have_been_made }
+    its(:first) { should be_a_kind_of(Eventbrite::Discount) }
+  end
 end
