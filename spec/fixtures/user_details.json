@@ -1,0 +1,13 @@
+{
+    "emails": [
+        {
+            "email": "mitch@eventbrite.com",
+            "verified": true,
+            "primary": true
+        }
+    ],
+    "id": "123456789",
+    "name": "John Doe",
+    "first_name": "John",
+    "last_name": "Doe"
+}
