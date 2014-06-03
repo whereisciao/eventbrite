@@ -1,6 +1,7 @@
 require 'eventbrite/creatable'
 require 'eventbrite/changeable'
 require 'eventbrite/identity'
+require 'forwardable'
 
 module Eventbrite
   class Event < Eventbrite::Identity
@@ -18,5 +19,7 @@ module Eventbrite
     object_attr_reader :TimeWithZone, :end
     object_attr_reader :TicketClasses, :ticket_classes
 
+    extend Forwardable
+    def_delegator :ticket_classes, :tickets_sold
   end
 end

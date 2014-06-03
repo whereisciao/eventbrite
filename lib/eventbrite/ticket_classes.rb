@@ -11,5 +11,12 @@ module Eventbrite
         TicketClass.new(ticket_class)
       end
     end
+
+    def tickets_sold
+      unless @collection.empty?
+        @collection.map(&:quantity_sold).inject(:+)
+      end
+    end
+    memoize :tickets_sold
   end
 end
