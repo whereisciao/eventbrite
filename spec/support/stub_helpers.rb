@@ -37,3 +37,7 @@ end
 def fixture(file)
   File.new(fixture_path + '/' + file)
 end
+
+def fixture_json(file)
+  JSON.parse(fixture(file).read, :symbolize_names => true)
+end
