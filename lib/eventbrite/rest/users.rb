@@ -13,6 +13,10 @@ module Eventbrite
       def user_orders(user = nil, options = {})
         perform_with_cursor(:get, "/v3/users/#{extract_user_id(user)}/orders/", options, :orders, Eventbrite::Order)
       end
+
+      def user_owned_events(user = nil, options = {})
+        perform_with_cursor(:get, "/v3/users/#{extract_user_id(user)}/owned_events/", options, :events, Eventbrite::Event)
+      end
     end
   end
 end
