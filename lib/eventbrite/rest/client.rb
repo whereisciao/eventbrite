@@ -13,8 +13,6 @@ module Eventbrite
       include Eventbrite::REST::API
       attr_accessor :bearer_token
 
-      ENDPOINT = 'https://www.eventbriteapi.com'
-
       # @return [Hash]
       def connection_options
         @connection_options ||= {
@@ -46,18 +44,23 @@ module Eventbrite
       end
 
       # Perform an HTTP GET request
-      def get(path, params = {})
+      def get(version, path, params = {})
         headers = request_headers(:get, path, params)
-        request(:get, path, params, headers)
+        request(:get, version, path, params, headers)
       end
 
     # private
-      def connection
-        @connection ||= Faraday.new(ENDPOINT, connection_options)
+      def connection(version)
+        case(version)
+        when :v3
+          connection_v3
+        else
+          raise "#{version} Connection is undefined"
+        end
       end
 
-      def request(method, path, params = {}, headers = {})
-        connection.send(method.to_sym, path, params) { |request| request.headers.update(headers) }.env
+      def request(method, version, path, params = {}, headers = {})
+        connection(version).send(method.to_sym, path, params) { |request| request.headers.update(headers) }.env
       end
 
       def request_headers(method, path, params = {}, signature_params = params)

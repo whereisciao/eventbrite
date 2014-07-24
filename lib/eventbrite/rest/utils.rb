@@ -22,30 +22,33 @@ module Eventbrite
       end
 
       # @param request_method [Symbol]
+      # @param version [Symbol]
       # @param path [String]
       # @param options [Hash]
       # @param klass [Class]
-      def perform_with_object(request_method, path, options, klass)
-        request = Eventbrite::Request.new(self, request_method, path, options)
+      def perform_with_object (request_method, version, path, options, klass)
+        request = Eventbrite::Request.new(self, request_method, version, path, options)
         request.perform_with_object(klass)
       end
 
       # @param request_method [Symbol]
+      # @param version [Symbol]
       # @param path [String]
       # @param options [Hash]
       # @param klass [Class]
-      def perform_with_objects(request_method, path, options, collection_name, klass)
-        request = Eventbrite::Request.new(self, request_method, path, options)
+      def perform_with_objects (request_method, version, path, options, collection_name, klass)
+        request = Eventbrite::Request.new(self, request_method, version, path, options)
         request.perform_with_objects(collection_name.to_sym, klass)
       end
 
       # @param request_method [Symbol]
+      # @param version [Symbol]
       # @param path [String]
       # @param options [Hash]
       # @param klass [Class]
-      def perform_with_cursor(request_method, path, options, collection_name, klass = nil) # rubocop:disable ParameterLists
+      def perform_with_cursor (request_method, version, path, options, collection_name, klass = nil) # rubocop:disable ParameterLists
         merge_default_cursor!(options)
-        request = Eventbrite::Request.new(self, request_method, path, options)
+        request = Eventbrite::Request.new(self, request_method, version, path, options)
         request.perform_with_cursor(collection_name.to_sym, klass)
       end
 

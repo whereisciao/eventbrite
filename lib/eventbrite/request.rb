@@ -2,19 +2,20 @@ require 'eventbrite/cursor'
 
 module Eventbrite
   class Request
-    attr_accessor :client, :request_method, :path, :options
+    attr_accessor :client, :request_method, :version, :path, :options
     alias_method :verb, :request_method
 
-    def initialize(client, request_method, path, options = {})
+    def initialize(client, request_method, version, path, options = {})
       @client = client
       @request_method = request_method.to_sym
+      @version = version
       @path = path
       @options = options
     end
 
     # @return [Hash]
     def perform
-      @client.send(@request_method, @path, @options).body
+      @client.send(@request_method, @version, @path, @options).body
     end
 
     # @param klass [Class]
