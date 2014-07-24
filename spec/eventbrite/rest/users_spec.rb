@@ -75,6 +75,89 @@ describe Eventbrite::REST::Users do
       it { subject; a_get('/v3/users/me/owned_events/').with(:query => {page:1}).should have_been_made }
       its(:first) { should be_a_kind_of(Eventbrite::Event) }
     end
+  end
 
+  describe '.user_owned_event_orders' do
+    subject { client.user_owned_event_orders(user) }
+
+    context "user(1234567)" do
+      let(:user) { 1234567 }
+
+      before do
+        stub_get("/v3/users/#{user}/owned_event_orders/").
+          with(:query => {page:1}).
+          to_return(
+            :body => fixture('user_owned_event_orders.json'),
+            :headers => {:content_type => 'application/json; charset=utf-8'}
+          )
+      end
+
+      it_behaves_like 'a cursor'
+      it { subject; a_get("/v3/users/#{user}/owned_event_orders/").with(:query => {page:1}).should have_been_made }
+      its(:first) { should be_a_kind_of(Eventbrite::Order) }
+    end
+  end
+
+  describe '.user_owned_attendees' do
+    subject { client.user_owned_attendees(user) }
+
+    context 'user(nil)' do
+      let(:user) { nil }
+
+      before do
+        stub_get('/v3/users/me/owned_event_attendees/').
+          with(:query => {page:1}).
+          to_return(
+            :body => fixture('user_owned_event_attendees.json'),
+            :headers => {:content_type => 'application/json; charset=utf-8'}
+          )
+      end
+
+      it_behaves_like 'a cursor'
+      it { subject; a_get('/v3/users/me/owned_event_attendees/').with(:query => {page:1}).should have_been_made }
+      its(:first) { should be_a_kind_of(Eventbrite::Attendee) }
+    end
+  end
+
+  describe '.user_venues' do
+    subject { client.user_venues(user) }
+
+    context 'user(nil)' do
+      let(:user) { nil }
+
+      before do
+        stub_get('/v3/users/me/venues/').
+          with(:query => {page:1}).
+          to_return(
+            :body => fixture('user_venues.json'),
+            :headers => {:content_type => 'application/json; charset=utf-8'}
+          )
+      end
+
+      it_behaves_like 'a cursor'
+      it { subject; a_get('/v3/users/me/venues/').with(:query => {page:1}).should have_been_made }
+      its(:first) { should be_a_kind_of(Eventbrite::Venue) }
+    end
+  end
+
+  describe '.user_organizers' do
+    subject { client.user_organizers(user) }
+
+    context 'user(nil)' do
+      let(:user) { nil }
+
+      before do
+        stub_get('/v3/users/me/organizers/').
+          with(:query => {page:1}).
+          to_return(
+            :body => fixture('user_organizers.json'),
+            :headers => {:content_type => 'application/json; charset=utf-8'}
+          )
+      end
+
+      it_behaves_like 'a cursor'
+      it { subject; a_get('/v3/users/me/organizers/').with(:query => {page:1}).should have_been_made }
+      its(:first) { should be_a_kind_of(Eventbrite::Organizer) }
+    end
   end
 end

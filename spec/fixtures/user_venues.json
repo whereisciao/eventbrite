@@ -1,0 +1,49 @@
+{
+    "pagination": {
+        "object_count": 3,
+        "page_number": 1,
+        "page_size": 50,
+        "page_count": 1
+    },
+    "venues": [
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/venues/6017043/",
+            "id": "6017043",
+            "name": "Eventbrite",
+            "address_1": null,
+            "address_2": null,
+            "city": null,
+            "state": null,
+            "postal_code": null,
+            "country": null,
+            "latitude": "37.775447",
+            "longitude": "-122.39997800000003"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/venues/6283841/",
+            "id": "6283841",
+            "name": "Central Park",
+            "address_1": null,
+            "address_2": null,
+            "city": null,
+            "state": null,
+            "postal_code": null,
+            "country": null,
+            "latitude": "40.782865",
+            "longitude": "-73.96535499999999"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/venues/6798033/",
+            "id": "6798033",
+            "name": "Eventbrite",
+            "address_1": null,
+            "address_2": null,
+            "city": null,
+            "state": null,
+            "postal_code": null,
+            "country": null,
+            "latitude": "37.782222",
+            "longitude": "-122.40551499999998"
+        }
+    ]
+}

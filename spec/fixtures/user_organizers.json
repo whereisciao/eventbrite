@@ -1,0 +1,20 @@
+{
+    "organizers": [
+        {
+            "description": {
+                "text": null,
+                "html": null
+            },
+            "resource_uri": "https://www.eventbriteapi.com/v3/organizers/6230879969/",
+            "id": "6230879969",
+            "name": "Developer Relations Team",
+            "url": "http://www.eventbrite.com/o/developer-relations-team-6230879969"
+        }
+    ],
+    "pagination": {
+        "object_count": 1,
+        "page_number": 1,
+        "page_size": 50,
+        "page_count": 1
+    }
+}
