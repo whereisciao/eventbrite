@@ -6,6 +6,6 @@ describe Eventbrite::NullObject do
   describe '.nil?' do
     subject { instance.nil? }
 
-    it { should be_true }
+    it { should eq(true) }
   end
 end

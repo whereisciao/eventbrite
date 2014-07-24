@@ -27,7 +27,7 @@ shared_examples 'creatable' do
   describe '.created?' do
     subject { instance.created? }
 
-    it { should be_true }
+    it { should eq(true) }
   end
 end
 
@@ -41,6 +41,6 @@ shared_examples 'changeable' do
   describe '.changed?' do
     subject { instance.changed? }
 
-    it { should be_true }
+    it { should eq(true) }
   end
 end

@@ -10,8 +10,16 @@ ENV['RACK_ENV'] = "test"
 
 require 'eventbrite'
 require 'rspec'
+require 'rspec/its'
 require 'webmock/rspec'
 require 'pry'
 
 # Load Files in Support directory
 Dir["./spec/support/**/*.rb"].sort.each {|f| require f}
+
+# Rspec Config
+RSpec.configure do |config|
+  config.expect_with :rspec do |c|
+    c.syntax = :should
+  end
+end
