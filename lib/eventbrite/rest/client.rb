@@ -5,6 +5,7 @@ require 'timeout'
 require 'eventbrite/client'
 require 'eventbrite/rest/api'
 require 'eventbrite/rest/response/parse_json'
+require 'eventbrite/rest/response/raise_error'
 
 module Eventbrite
   module REST
