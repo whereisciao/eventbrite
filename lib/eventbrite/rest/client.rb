@@ -51,12 +51,7 @@ module Eventbrite
 
     # private
       def connection(version)
-        case(version)
-        when :v3
-          connection_v3
-        else
-          raise "#{version} Connection is undefined"
-        end
+        send("connection_#{version}")
       end
 
       def request(method, version, path, params = {}, headers = {})
