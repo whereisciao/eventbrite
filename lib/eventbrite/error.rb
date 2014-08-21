@@ -10,10 +10,10 @@ module Eventbrite
     def self.parse_error(body)
       error = body[:error]
 
-      if body.nil?
+      if error.nil?
         ['', nil]
-      elsif body[:error]
-        [body[:error_type], body[:error_message]]
+      else
+        [error[:error_type], error[:error_message]]
       end
     end
 
