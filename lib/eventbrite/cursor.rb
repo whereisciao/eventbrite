@@ -20,6 +20,7 @@ module Eventbrite
       @request_method = request.verb
       @path = request.path
       @options = request.options
+      @version = request.version
       @collection = []
       self.attrs = attrs
     end
@@ -51,7 +52,7 @@ module Eventbrite
 
     # @return [Hash]
     def fetch_next_page
-      response = @client.send(@request_method, @path, @options.merge(:page => next_page)).body
+      response = @client.send(@request_method, @version, @path, @options.merge(:page => next_page)).body
       self.attrs = response
     end
 
