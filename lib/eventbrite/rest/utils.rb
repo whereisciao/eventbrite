@@ -1,10 +1,13 @@
 require 'eventbrite/request'
+require 'eventbrite/loggable'
 
 module Eventbrite
   module REST
     module Utils
       URI_SUBSTRING = '://'
       DEFAULT_CURSOR = 1
+
+      extend Eventbrite::Loggable
 
       def extract_id(object)
         case object
