@@ -3,7 +3,8 @@ require 'eventbrite/identity'
 module Eventbrite
   class TicketClass < Eventbrite::Identity
     attr_reader :name, :free, :minimum_quantity,
-      :maximum_quantity, :quantity_total, :quantity_sold
+      :maximum_quantity, :quantity_total, :quantity_sold,
+      :description
     object_attr_reader :Money, :cost
     object_attr_reader :Money, :fee
 
