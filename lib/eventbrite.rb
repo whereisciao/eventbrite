@@ -1,6 +1,7 @@
 require 'addressable/uri'
 require 'eventbrite/access_code'
 require 'eventbrite/address'
+require 'eventbrite/addresses'
 require 'eventbrite/answer'
 require 'eventbrite/answers'
 require 'eventbrite/attendee'

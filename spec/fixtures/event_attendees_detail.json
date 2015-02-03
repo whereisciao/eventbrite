@@ -1,60 +1,161 @@
 {
-    "event": {
-        "resource_uri": "https://www.eventbriteapi.com/v3/events/10623123047/",
-        "id": "10623123047",
-        "name": {
-            "text": "Test Event",
-            "html": "Test Event"
-        },
-        "url": "http://www.eventbrite.com/e/test-event-10623123047"
+  "team": {
+    "id": "7665",
+    "name": "Example Team",
+    "date_joined": "2015-01-09T20:49:02Z",
+    "event_id": "298484"
+  },
+  "resource_uri": "https://www.eventbriteapi.com/v3/events/1234567/attendees/7654321/",
+  "id": "7654321",
+  "changed": "2015-01-09T20:49:02Z",
+  "created": "2015-01-09T20:45:31Z",
+  "quantity": 1,
+  "ticket_class_id": "19283",
+  "profile": {
+    "first_name": "Joe",
+    "last_name": "Example",
+    "addresses": {
+      "home": {
+        "city": "Springfield",
+        "country": "US",
+        "region": "IL",
+        "postal_code": "555555",
+        "address_1": "123 Main Street",
+        "address_2": ""
+      }
     },
-    "order": {
-        "resource_uri": "https://www.eventbriteapi.com/v3/orders/255003399/",
-        "id": "255003399"
-    },
-    "team": null,
-    "id": "322951239",
-    "changed": "2014-02-13T23:52:43Z",
-    "created": "2014-02-13T23:52:23Z",
-    "email": null,
-    "quantity": 1,
-    "status": "Attending",
-    "ticket_id": "23598121",
-    "profile": {
-        "first_name": "John",
-        "last_name": "Doe",
-        "email": "JohnDoe@gmail.com"
-    },
-    "barcodes": [
-        {
-            "status": "unused",
-            "barcode": "255003399322951239001",
-            "checkin_type": 0,
-            "created": "2014-02-13T23:52:43Z",
-            "changed": "2014-02-13T23:52:43Z"
-        }
-    ],
-    "answers": null,
-    "costs": {
-        "payment_fee": {
-            "currency": "USD",
-            "display": "$0.00",
-            "value": 0
-        },
-        "gross": {
-            "currency": "USD",
-            "display": "$0.00",
-            "value": 0
-        },
-        "eventbrite_fee": {
-            "currency": "USD",
-            "display": "$0.00",
-            "value": 0
-        },
-        "tax": {
-            "currency": "USD",
-            "display": "$0.00",
-            "value": 0
-        }
+    "gender": "male",
+    "age": 28,
+    "email": "examplea@example.com",
+    "name": "Joe Example"
+  },
+  "barcodes": [
+    {
+      "status": "unused",
+      "barcode": "0000000000000001001",
+      "checkin_type": 0,
+      "created": "2015-01-09T20:49:02Z",
+      "changed": "2015-01-09T20:49:02Z"
     }
+  ],
+  "answers": [
+    {
+      "answer": "Mens XL",
+      "type": "multiple_choice",
+      "question": "What size tshirt are you?",
+      "question_id": "53"
+    },
+    {
+      "answer": "@JoeExample",
+      "type": "text",
+      "question": "What is your twitter handle? ",
+      "question_id": "55"
+    }
+  ],
+  "costs": {
+    "payment_fee": {
+      "currency": "USD",
+      "display": "$0.00",
+      "value": 0
+    },
+    "gross": {
+      "currency": "USD",
+      "display": "$25.00",
+      "value": 2500
+    },
+    "eventbrite_fee": {
+      "currency": "USD",
+      "display": "$1.13",
+      "value": 113
+    },
+    "tax": {
+      "currency": "USD",
+      "display": "$0.00",
+      "value": 0
+    }
+  },
+  "checked_in": false,
+  "cancelled": false,
+  "refunded": false,
+  "affiliate": "EB Ref",
+  "status": "Attending",
+  "event_id": "567",
+  "order_id": "456",
+  "event": {
+    "resource_uri": "https://www.eventbriteapi.com/v3/events/67/",
+    "name": {
+      "text": "Example Event",
+      "html": "Example Event"
+    },
+    "description": {
+      "text": "For event details, please visit example.org",
+      "html": "<P>For event details, please visit example.org</p>"
+    },
+    "logo": {
+      "id": "70",
+      "url": "http://cdn.evbuc.com/images/270/095/1/logo.png"
+    },
+    "id": "67",
+    "url": "http://www.eventbrite.com/e/startup-weekend-healthbio-st-louis-tickets-1234567",
+    "logo_url": "http://cdn.evbuc.com/images/270/095/1/logo.png",
+    "start": {
+      "timezone": "America/Chicago",
+      "local": "2015-02-06T18:30:00",
+      "utc": "2015-02-07T00:30:00Z"
+    },
+    "end": {
+      "timezone": "America/Chicago",
+      "local": "2015-02-08T21:00:00",
+      "utc": "2015-02-09T03:00:00Z"
+    },
+    "created": "2014-12-09T16:49:04Z",
+    "changed": "2015-02-03T17:28:11Z",
+    "capacity": 300,
+    "status": "live",
+    "currency": "USD",
+    "listed": true,
+    "shareable": true,
+    "invite_only": false,
+    "online_event": false,
+    "show_remaining": false,
+    "organizer_id": "659",
+    "venue_id": "659",
+    "category_id": "101",
+    "subcategory_id": "1001",
+    "format_id": "9"
+  },
+  "order": {
+    "resource_uri": "https://www.eventbriteapi.com/v3/orders/456/",
+    "id": "456",
+    "changed": "2015-01-09T20:49:02Z",
+    "created": "2015-01-09T20:45:32Z",
+    "costs": {
+      "payment_fee": {
+        "currency": "USD",
+        "display": "$0.00",
+        "value": 0
+      },
+      "gross": {
+        "currency": "USD",
+        "display": "$25.00",
+        "value": 2500
+      },
+      "eventbrite_fee": {
+        "currency": "USD",
+        "display": "$1.13",
+        "value": 113
+      },
+      "tax": {
+        "currency": "USD",
+        "display": "$0.00",
+        "value": 0
+      }
+    },
+    "name": "Joe Example",
+    "first_name": "Joe",
+    "last_name": "Example",
+    "email": "Examplea@gmail.com",
+    "status": "placed",
+    "event_id": "567"
+  }
 }
