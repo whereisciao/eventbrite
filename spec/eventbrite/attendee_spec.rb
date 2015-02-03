@@ -52,5 +52,60 @@ describe Eventbrite::Attendee, focus: true do
         it { should be_nil }
       end
     end
+
+    describe '.barcodes.first' do
+      subject { attendee.barcodes.first }
+
+      its(:status) { should eq("unused") }
+      its(:barcode) { should eq("0000000000000001001") }
+      its(:checkin_type) { should eq(0) }
+    end
+
+    describe '.answers.first' do
+      subject { attendee.answers.first }
+
+      its(:answer)      { should eq("Mens XL") }
+      its(:type)        { should eq("multiple_choice") }
+      its(:question)    { should eq("What size tshirt are you?")}
+      its(:question_id) { should eq("53") }
+    end
+
+    describe '.costs.gross' do
+      subject { attendee.costs.gross }
+
+      its(:currency) { should eq("USD") }
+      its(:display) { should eq("$25.00") }
+      its(:value) { should eq(2500) }
+    end
+
+    describe '.costs.eventbrite_fee' do
+      subject { attendee.costs.eventbrite_fee }
+
+      its(:currency) { should eq("USD") }
+      its(:display) { should eq("$1.13") }
+      its(:value) { should eq(113) }
+    end
+
+    describe '.event.start' do
+      subject { attendee.event.start }
+
+      its(:utc) { should eq("2015-02-07T00:30:00Z") }
+      its(:local) { should eq("2015-02-06T18:30:00") }
+      its(:timezone) { should eq("America/Chicago") }
+    end
+
+    describe '.event.currency' do
+      subject { attendee.event.currency }
+
+      it { should eq ("USD") }
+    end
+
+    describe '.order.costs.gross' do
+      subject { attendee.order.costs.gross }
+
+      its(:currency) { should eq("USD") }
+      its(:display) { should eq("$25.00") }
+      its(:value) { should eq(2500) }
+    end
   end
 end

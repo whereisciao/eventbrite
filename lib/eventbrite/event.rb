@@ -8,7 +8,11 @@ module Eventbrite
     include Eventbrite::Creatable
     include Eventbrite::Changeable
 
-    attr_reader :resource_uri, :url, :logo_url, :capacity, :status
+    attr_reader :capacity, :category_id, :currency, :format_id,
+        :invite_only, :listed, :logo_url, :online_event,
+        :organizer_id, :resource_uri, :shareable, :show_remaining,
+        :status, :subcategory_id, :url, :venue_id
+
     object_attr_reader :HtmlString, :name
     object_attr_reader :HtmlString, :description
     object_attr_reader :Organizer, :organizer
