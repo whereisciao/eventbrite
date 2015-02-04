@@ -1,6 +1,6 @@
 require 'helper'
 
-describe Eventbrite::Attendee, focus: true do
+describe Eventbrite::Attendee do
   let(:attendee) { described_class.new(data) }
 
   context 'From event_attendees_detail.json' do
