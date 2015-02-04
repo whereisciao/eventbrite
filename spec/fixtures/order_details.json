@@ -1,0 +1,158 @@
+{
+  "resource_uri": "https://www.eventbriteapi.com/v3/orders/388431456/",
+  "id": "388431456",
+  "changed": "2015-01-09T20:49:02Z",
+  "created": "2015-01-09T20:45:32Z",
+  "costs": {
+    "payment_fee": {
+      "currency": "USD",
+      "display": "$0.00",
+      "value": 0
+    },
+    "gross": {
+      "currency": "USD",
+      "display": "$25.00",
+      "value": 2500
+    },
+    "eventbrite_fee": {
+      "currency": "USD",
+      "display": "$1.13",
+      "value": 113
+    },
+    "tax": {
+      "currency": "USD",
+      "display": "$0.00",
+      "value": 0
+    }
+  },
+  "name": "John Doe",
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "Doea@gmail.com",
+  "status": "placed",
+  "event_id": "14879788849",
+  "event": {
+    "resource_uri": "https://www.eventbriteapi.com/v3/events/8849/",
+    "name": {
+      "text": "Example Event",
+      "html": "Example Event"
+    },
+    "description": {
+      "text": "For event details, please visit Eventbrite.",
+      "html": "<P>For event details, please visit Eventbrite."
+    },
+    "logo": {
+      "id": "270",
+      "url": "http://cdn.evbuc.com/images/12052270/60095/1/logo.png"
+    },
+    "id": "8849",
+    "url": "http://www.eventbrite.com/e/8849",
+    "logo_url": "http://cdn.evbuc.com/images/12052270/0095/1/logo.png",
+    "start": {
+      "timezone": "America/Chicago",
+      "local": "2015-02-06T18:30:00",
+      "utc": "2015-02-07T00:30:00Z"
+    },
+    "end": {
+      "timezone": "America/Chicago",
+      "local": "2015-02-08T21:00:00",
+      "utc": "2015-02-09T03:00:00Z"
+    },
+    "created": "2014-12-09T16:49:04Z",
+    "changed": "2015-02-04T07:31:37Z",
+    "capacity": 300,
+    "status": "live",
+    "currency": "USD",
+    "listed": true,
+    "shareable": true,
+    "invite_only": false,
+    "online_event": false,
+    "show_remaining": false,
+    "organizer_id": "6659",
+    "venue_id": "5659",
+    "category_id": "101",
+    "subcategory_id": "1001",
+    "format_id": "9"
+  },
+  "attendees": [
+    {
+      "team": null,
+      "resource_uri": "https://www.eventbriteapi.com/v3/events/14879788849/attendees/6670/",
+      "id": "6670",
+      "changed": "2015-01-09T20:49:02Z",
+      "created": "2015-01-09T20:45:31Z",
+      "quantity": 1,
+      "ticket_class_id": "2703",
+      "profile": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "addresses": {
+          "home": {
+            "city": "Springfield",
+            "country": "US",
+            "region": "IL",
+            "postal_code": "55555",
+            "address_1": "123 Main Street",
+            "address_2": ""
+          }
+        },
+        "gender": "male",
+        "age": 28,
+        "email": "doea@gmail.com",
+        "name": "John Doe"
+      },
+      "barcodes": [
+        {
+          "status": "unused",
+          "barcode": "000001",
+          "checkin_type": 0,
+          "created": "2015-01-09T20:49:02Z",
+          "changed": "2015-01-09T20:49:02Z"
+        }
+      ],
+      "answers": [
+        {
+          "answer": "Mens XL",
+          "type": "multiple_choice",
+          "question": "What size tshirt are you?",
+          "question_id": "9051053"
+        },
+        {
+          "answer": "General Interest in Event",
+          "type": "text",
+          "question": "Please Specify",
+          "question_id": "9051047"
+        }
+      ],
+      "costs": {
+        "payment_fee": {
+          "currency": "USD",
+          "display": "$0.00",
+          "value": 0
+        },
+        "gross": {
+          "currency": "USD",
+          "display": "$25.00",
+          "value": 2500
+        },
+        "eventbrite_fee": {
+          "currency": "USD",
+          "display": "$1.13",
+          "value": 113
+        },
+        "tax": {
+          "currency": "USD",
+          "display": "$0.00",
+          "value": 0
+        }
+      },
+      "checked_in": false,
+      "cancelled": false,
+      "refunded": false,
+      "affiliate": "eapi",
+      "status": "Attending",
+      "event_id": "8849",
+      "order_id": "1456"
+    }
+  ]
+}

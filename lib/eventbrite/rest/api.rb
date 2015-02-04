@@ -1,5 +1,6 @@
 require 'eventbrite/rest/events'
 require 'eventbrite/rest/users'
+require 'eventbrite/rest/orders'
 
 module Eventbrite
   module REST
@@ -8,6 +9,7 @@ module Eventbrite
 
       include Eventbrite::REST::Events
       include Eventbrite::REST::Users
+      include Eventbrite::REST::Orders
 
     private
       def connection_v3
