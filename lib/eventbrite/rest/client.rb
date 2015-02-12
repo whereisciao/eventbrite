@@ -49,6 +49,12 @@ module Eventbrite
         request(:get, version, path, params, headers)
       end
 
+      # Perform an HTTP post request
+      def post(version, path, params = {})
+        headers = request_headers(:post, path, params)
+        request(:post, version, path, params, headers)
+      end
+
     # private
       def connection(version)
         send("connection_#{version}")
