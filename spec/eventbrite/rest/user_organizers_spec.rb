@@ -45,5 +45,19 @@ describe Eventbrite::REST::UserOrganizers, focus: true do
   end
 
   describe '.list_user_organizers' do
+    subject { client.list_user_organizers }
+
+    before do
+      stub_get('/v3/users/me/organizers/').
+        with(:query => {page:1}).
+        to_return(
+          body: fixture('user_organizers.json'),
+          headers: {content_type: 'application/json; charset=utf-8'}
+        )
+    end
+
+    it_behaves_like 'a cursor'
+    it { subject; a_get('/v3/users/me/organizers/').with(:query => {page:1}).should have_been_made }
+    its(:first) { should be_a_kind_of(Eventbrite::Organizer) }
   end
 end
