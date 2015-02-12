@@ -1,0 +1,13 @@
+{
+  "description": {
+    "text": "A guy, a girl, and an event planner",
+    "html": "A guy, a girl, and an event planner"
+  },
+  "logo": null,
+  "resource_uri": "https://www.eventbriteapi.com/v3/organizers/7939735808/",
+  "id": "7939735808",
+  "name": "Event Action Team",
+  "url": "http://www.eventbrite.com/o/event-action-team-7939735808",
+  "num_past_events": 0,
+  "num_future_events": 0
+}
