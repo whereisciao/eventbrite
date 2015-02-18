@@ -11,6 +11,8 @@ module Eventbrite
   module REST
     class Client < Eventbrite::Client
       include Eventbrite::REST::API
+      include Eventbrite::Loggable
+
       attr_accessor :bearer_token
 
       # @return [Hash]
@@ -61,6 +63,7 @@ module Eventbrite
       end
 
       def request(method, version, path, params = {}, headers = {})
+        logger.debug("Requesting: #{method}, #{version}, #{path}, #{params}")
         connection(version).send(method.to_sym, path, params) { |request| request.headers.update(headers) }.env
       end
 

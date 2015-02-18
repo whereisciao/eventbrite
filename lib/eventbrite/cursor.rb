@@ -29,6 +29,12 @@ module Eventbrite
       @attrs[:pagination][:object_count] || -1
     end
 
+    def all
+      (page_count - current_page).times { fetch_next_page }
+
+      @collection
+    end
+
   private
 
     def current_page
@@ -60,6 +66,7 @@ module Eventbrite
     # @return [Hash]
     def attrs=(attrs)
       @attrs = attrs
+
       Array(attrs[@key]).each do |element|
         @collection << (@klass ? @klass.new(element) : element)
       end
