@@ -2,8 +2,10 @@ require 'eventbrite/base'
 
 module Eventbrite
   class Addresses < Eventbrite::Base
-    address_reader :home
-    address_reader :ship
-    address_reader :work
+    TYPES = [:home, :ship, :work]
+
+    TYPES.each do |address_type|
+      address_reader address_type
+    end
   end
 end

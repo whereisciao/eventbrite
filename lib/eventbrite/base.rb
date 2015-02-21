@@ -166,13 +166,37 @@ module Eventbrite
         end
       end
 
-
       # Dynamically define method and accessors for Address Object
       def address_reader(field)
         object_attr_reader :Address, field
 
         delegate *Address::FIELDS, to: field,
           allow_nil: true, prefix: true
+      end
+
+      # Dynamically define method and accessors for Addresses Object
+      def addresses_reader(field)
+        object_attr_reader :Addresses, field
+        delegate_address_fields to: field
+      end
+
+      def delegate_address_fields(params = {})
+        Addresses::TYPES.each do |address_type|
+          delegate *address_fields(prefix: address_type),
+            to: params[:to], allow_nil: true
+        end
+      end
+
+      def address_fields(params = {})
+        fields = Eventbrite::Address::FIELDS
+
+        if params[:prefix]
+          fields = fields.map do |field|
+            "#{params[:prefix]}_#{field}".to_sym
+          end
+        end
+
+        fields
       end
     end
 
