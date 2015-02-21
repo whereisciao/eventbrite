@@ -6,6 +6,6 @@ module Eventbrite
       :email, :first_name, :gender, :home_phone, :job_title,
       :last_name, :name, :prefix, :suffix, :website, :work_phone
 
-    object_attr_reader :Addresses, :addresses
+    addresses_reader :addresses
   end
 end
