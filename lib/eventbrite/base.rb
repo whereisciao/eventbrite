@@ -8,6 +8,8 @@ module Eventbrite
     extend Forwardable
     include Memoizable
 
+    RUBY_RESERVED_WORDS = []
+
     attr_reader :attrs
     alias_method :to_h, :attrs
     class << self
@@ -107,6 +109,94 @@ module Eventbrite
           !@attrs[key2].nil? && @attrs[key2] != false
         end
         memoize(:"#{key1}?")
+      end
+
+      # File activesupport/lib/active_support/core_ext/module/delegation.rb, line 151
+      def delegate(*methods)
+        options = methods.pop
+        unless options.is_a?(Hash) && to = options[:to]
+          raise ArgumentError, 'Delegation needs a target. Supply an options hash with a :to key as the last argument (e.g. delegate :hello, to: :greeter).'
+        end
+
+        prefix, allow_nil = options.values_at(:prefix, :allow_nil)
+
+        if prefix == true && to =~ /^[^a-z_]/
+          raise ArgumentError, 'Can only automatically set the delegation prefix when delegating to a method.'
+        end
+
+        method_prefix =        if prefix
+            "#{prefix == true ? to : prefix}_"
+          else
+            ''
+          end
+
+        file, line = caller.first.split(':', 2)
+        line = line.to_i
+
+        to = to.to_s
+        to = "self.#{to}" if RUBY_RESERVED_WORDS.include?(to)
+
+        methods.each do |method|
+          # Attribute writer methods only accept one argument. Makes sure []=
+          # methods still accept two arguments.
+          definition = (method =~ /[^\]]=$/) ? 'arg' : '*args, &block'
+
+          # The following generated method calls the target exactly once, storing
+          # the returned value in a dummy variable.
+          #
+          # Reason is twofold: On one hand doing less calls is in general better.
+          # On the other hand it could be that the target has side-effects,
+          # whereas conceptually, from the user point of view, the delegator should
+          # be doing one call.
+
+          exception = %Q(raise DelegationError, "#{self}##{method_prefix}#{method} delegated to #{to}.#{method}, but #{to} is nil: \#{self.inspect}")
+
+          method_def = [
+            "def #{method_prefix}#{method}(#{definition})",
+            "  _ = #{to}",
+            "  if !_.nil? || nil.respond_to?(:#{method})",
+            "    _.#{method}(#{definition})",
+            "  else",
+            "    #{exception unless allow_nil}",
+            "  end",
+            "end"
+          ].join ';'
+
+          module_eval(method_def, file, line)
+        end
+      end
+
+      # Dynamically define method and accessors for Address Object
+      def address_reader(field)
+        object_attr_reader :Address, field
+
+        delegate *Address::FIELDS, to: field,
+          allow_nil: true, prefix: true
+      end
+
+      # Dynamically define method and accessors for Addresses Object
+      def addresses_reader(field)
+        object_attr_reader :Addresses, field
+        delegate_address_fields to: field
+      end
+
+      def delegate_address_fields(params = {})
+        Addresses::TYPES.each do |address_type|
+          delegate *address_fields(prefix: address_type),
+            to: params[:to], allow_nil: true
+        end
+      end
+
+      def address_fields(params = {})
+        fields = Eventbrite::Address::FIELDS
+
+        if params[:prefix]
+          fields = fields.map do |field|
+            "#{params[:prefix]}_#{field}".to_sym
+          end
+        end
+
+        fields
       end
     end
 

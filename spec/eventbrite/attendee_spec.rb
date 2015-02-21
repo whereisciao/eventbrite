@@ -28,6 +28,7 @@ describe Eventbrite::Attendee do
       its(:gender)     { should eq("male") }
       its(:email)      { should eq("examplea@example.com") }
       its(:name)       { should eq("Joe Example") }
+      its(:age)        { should eq(28) }
 
       describe '.addresses.home' do
         subject { attendee.profile.addresses.home }
@@ -51,6 +52,25 @@ describe Eventbrite::Attendee do
 
         it { should be_nil }
       end
+    end
+
+    describe 'delegate profile accessors' do
+      its(:age) { should eq(28) }
+      its(:birth_date)  { should be_nil }
+      its(:blog)  { should be_nil }
+      its(:cell_phone)  { should be_nil }
+      its(:company) { should be_nil }
+      its(:email) { should eq("examplea@example.com") }
+      its(:first_name)  { should eq("Joe") }
+      its(:gender)  { should eq("male") }
+      its(:home_phone)  { should be_nil }
+      its(:job_title) { should be_nil }
+      its(:last_name) { should eq("Example") }
+      its(:name)  { should eq("Joe Example") }
+      its(:prefix)  { should be_nil }
+      its(:suffix)  { should be_nil }
+      its(:website) { should be_nil }
+      its(:work_phone)  { should be_nil }
     end
 
     describe '.barcodes.first' do
