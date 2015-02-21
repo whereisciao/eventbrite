@@ -1,6 +1,6 @@
 require 'helper'
 
-describe Eventbrite::REST::UserOrganizers, focus: true do
+describe Eventbrite::REST::UserOrganizers do
   let(:client) { Eventbrite::REST::Client.new(oauth_token:"TOKEN")}
 
   let(:params) do

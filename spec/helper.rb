@@ -13,6 +13,8 @@ require 'rspec'
 require 'rspec/its'
 require 'webmock/rspec'
 require 'pry'
+require 'factory_girl'
+require 'faker'
 
 # Load Files in Support directory
 Dir["./spec/support/**/*.rb"].sort.each {|f| require f}
@@ -22,4 +24,7 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :should
   end
+  config.include FactoryGirl::Syntax::Methods
 end
+
+FactoryGirl.find_definitions
