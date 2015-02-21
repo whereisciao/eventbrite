@@ -1,7 +1,8 @@
 require 'eventbrite/base'
 
 module Eventbrite
-  class Money < Eventbrite::Base
+  class Currency < Eventbrite::Base
     attr_reader :currency, :display, :value
+
   end
 end
