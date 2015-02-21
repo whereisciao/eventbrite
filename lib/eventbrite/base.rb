@@ -165,6 +165,15 @@ module Eventbrite
           module_eval(method_def, file, line)
         end
       end
+
+
+      # Dynamically define method and accessors for Address Object
+      def address_reader(field)
+        object_attr_reader :Address, field
+
+        delegate *Address::FIELDS, to: field,
+          allow_nil: true, prefix: true
+      end
     end
 
     # Initializes a new object

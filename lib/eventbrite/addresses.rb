@@ -2,8 +2,8 @@ require 'eventbrite/base'
 
 module Eventbrite
   class Addresses < Eventbrite::Base
-    object_attr_reader :Address, :home
-    object_attr_reader :Address, :ship
-    object_attr_reader :Address, :work
+    address_reader :home
+    address_reader :ship
+    address_reader :work
   end
 end
