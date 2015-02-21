@@ -23,5 +23,9 @@ module Eventbrite
       :email, :first_name, :gender, :home_phone, :job_title,
       :last_name, :name, :prefix, :suffix, :website, :work_phone,
         to: :profile, allow_nil: true
+    def inspect
+      keys = [:id, :first_name, :last_name]
+      "#<#{self.class.name}#{keys.collect { |key| " #{key}=#{send(key).inspect}" }.join}>"
+    end
   end
 end
