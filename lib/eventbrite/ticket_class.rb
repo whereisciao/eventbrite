@@ -9,10 +9,10 @@ module Eventbrite
       :split_fee, :hide_description, :auto_hide,
       :variants, :event_id
 
-    object_attr_reader :Money, :cost
-    object_attr_reader :Money, :fee
-    object_attr_reader :Money, :actual_cost
-    object_attr_reader :Money, :actual_fee
+    object_attr_reader :Currency, :cost
+    object_attr_reader :Currency, :fee
+    object_attr_reader :Currency, :actual_cost
+    object_attr_reader :Currency, :actual_fee
 
     def sales_start
       Time.parse(@attrs[:sales_start]) unless @attrs[:sales_start].nil?
