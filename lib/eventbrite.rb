@@ -1,3 +1,6 @@
+require 'bundler'
+Bundler.require
+
 require 'addressable/uri'
 require 'eventbrite/access_code'
 require 'eventbrite/address'
