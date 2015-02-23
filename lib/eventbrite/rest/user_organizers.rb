@@ -10,6 +10,10 @@ module Eventbrite
         perform_with_object(:post, :v3, "/v3/organizers/", options, Eventbrite::Organizer)
       end
 
+      def get_user_organizer(organizer = nil, options = {})
+        perform_with_object(:get, :v3, "/v3/organizers/#{extract_user_id(organizer)}/", options, Eventbrite::Organizer)
+      end
+
       def update_user_organizer(organizer = nil, options = {})
         perform_with_object(:post, :v3, "/v3/organizers/#{extract_user_id(organizer)}/", options, Eventbrite::Organizer)
       end

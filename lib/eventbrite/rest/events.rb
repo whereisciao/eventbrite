@@ -20,6 +20,10 @@ module Eventbrite
         perform_with_object(:get, :v3, "/v3/events/#{extract_id(event)}/", options, Eventbrite::Event)
       end
 
+      def update_event_details(event, options = {})
+        perform_with_object(:post, :v3, "/v3/events/#{extract_id(event)}/", options, Eventbrite::Event)
+      end
+
       def event_attendees(event, options = {})
         perform_with_cursor(:get, :v3, "/v3/events/#{extract_id(event)}/attendees/", options, :attendees, Eventbrite::Attendee)
       end
