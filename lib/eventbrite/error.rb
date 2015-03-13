@@ -12,6 +12,8 @@ module Eventbrite
 
       if error.nil?
         ['', nil]
+      elsif String === error
+        ['', error]
       else
         [error[:error_type], error[:error_message]]
       end
