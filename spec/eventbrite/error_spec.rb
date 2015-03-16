@@ -1,6 +1,6 @@
 require 'helper'
 
-describe Eventbrite::Error, focus: true do
+describe Eventbrite::Error do
   let(:client) { Eventbrite::REST::Client.new(oauth_token: "OT") }
 
   describe '.message' do
