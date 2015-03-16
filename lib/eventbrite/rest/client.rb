@@ -15,6 +15,10 @@ module Eventbrite
 
       attr_accessor :bearer_token
 
+      def connection_options=(connection_options)
+        @connection_options = connection_options
+      end
+
       # @return [Hash]
       def connection_options
         @connection_options ||= {
