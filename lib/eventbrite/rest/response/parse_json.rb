@@ -1,10 +1,10 @@
-require 'faraday'
+require_relative 'middleware'
 require 'json'
 
 module Eventbrite
   module REST
     module Response
-      class ParseJson < Faraday::Response::Middleware
+      class ParseJson < Eventbrite::REST::Response::Middleware
         WHITESPACE_REGEX = /\A^\s*$\z/
 
         def parse(body)

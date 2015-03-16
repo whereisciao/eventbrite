@@ -1,6 +1,10 @@
+require 'eventbrite/loggable'
+
 module Eventbrite
   class Error < StandardError
     attr_reader :message, :description, :code
+
+    include Eventbrite::Loggable
 
     class << self
       def from_response(response)
@@ -36,6 +40,8 @@ module Eventbrite
 
     def initialize(message = '', description = '', code = nil)
       super(description)
+
+      logger.debug "Initializing Error: #{code} #{message} : #{description}"
 
       @message = message
       @description = description

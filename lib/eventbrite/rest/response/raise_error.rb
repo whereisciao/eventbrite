@@ -1,11 +1,13 @@
-require 'faraday'
+require_relative 'middleware'
 require 'eventbrite/error'
 
 module Eventbrite
   module REST
     module Response
-      class RaiseError < Faraday::Response::Middleware
+      class RaiseError < Eventbrite::REST::Response::Middleware
         def on_complete(response)
+          logger.debug("Raise Error: #{response.status} : #{response.body}")
+
           status_code = response.status
           klass = Eventbrite::Error.errors[status_code]
           if klass
