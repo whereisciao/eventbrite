@@ -10,7 +10,11 @@ module Eventbrite
 
       def errors
         @errors ||= {
-          401 => Eventbrite::Error::Unauthorized
+          400 => Eventbrite::Error::BadRequest,
+          401 => Eventbrite::Error::Unauthorized,
+          403 => Eventbrite::Error::Forbidden,
+          404 => Eventbrite::Error::NotFound,
+          500 => Eventbrite::Error::InternalServerError
         }
 
       end
@@ -41,8 +45,22 @@ module Eventbrite
     # Raised when Eventbrite returns a 4xx HTTP status code
     class ClientError < self; end
 
-    # Raised when Twitter returns the HTTP status code 401
+    # Raised when Eventbrite returns the HTTP status code 400
+    class BadRequest < ClientError; end
+
+    # Raised when Eventbrite returns the HTTP status code 401
     class Unauthorized < ClientError; end
 
+    # Raised when Eventbrite returns the HTTP status code 403
+    class Forbidden < ClientError; end
+
+    # Raised when Eventbrite returns the HTTP status code 404
+    class NotFound < ClientError; end
+
+    # Raised when Eventbrite returns a 5xx HTTP status code
+    class ServerError < self; end
+
+    # Raised when Eventbrite returns the HTTP status code 500
+    class InternalServerError < ServerError; end
   end
 end
