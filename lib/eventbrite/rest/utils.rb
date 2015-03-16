@@ -24,6 +24,17 @@ module Eventbrite
         user.nil? ? 'me' : extract_id(user)
       end
 
+      def parse_args(arguments)
+        object, options = arguments
+
+        if object.kind_of?(Hash)
+          options = object
+          object = nil
+        end
+
+        [object, options || {}]
+      end
+
       # @param request_method [Symbol]
       # @param version [Symbol]
       # @param path [String]

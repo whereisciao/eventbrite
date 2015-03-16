@@ -22,7 +22,7 @@ Dir["./spec/support/**/*.rb"].sort.each {|f| require f}
 # Rspec Config
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
-    c.syntax = :should
+    c.syntax = :expect
   end
   config.include FactoryGirl::Syntax::Methods
 end

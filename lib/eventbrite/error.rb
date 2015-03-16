@@ -1,33 +1,74 @@
+require 'eventbrite/loggable'
+
 module Eventbrite
   class Error < StandardError
-    attr_reader :type, :message
+    attr_reader :message, :description, :code
 
-    def self.from_response(response)
-      error_type, error_message = parse_error(response.body)
-      new(error_type, error_message)
-    end
+    include Eventbrite::Loggable
 
-    def self.parse_error(body)
-      error = body[:error]
-
-      if error.nil?
-        ['', nil]
-      elsif String === error
-        ['', error]
-      else
-        [error[:error_type], error[:error_message]]
+    class << self
+      def from_response(response)
+        message, description, code = parse_error(response.body)
+        new(message, description, code)
       end
+
+      def errors
+        @errors ||= {
+          400 => Eventbrite::Error::BadRequest,
+          401 => Eventbrite::Error::Unauthorized,
+          403 => Eventbrite::Error::Forbidden,
+          404 => Eventbrite::Error::NotFound,
+          500 => Eventbrite::Error::InternalServerError
+        }
+
+      end
+
+    private
+      def parse_error(body)
+        if body.nil?
+          ['', '', nil]
+        elsif body.kind_of?(Hash)
+          [
+            body[:error],
+            body[:error_description],
+            body[:error]
+          ]
+        else
+          ['', '', nil]
+        end
+      end
+
     end
 
-    def initialize(type, message)
-      @type = type
+    def initialize(message = '', description = '', code = nil)
+      super(description)
+
+      logger.debug "Initializing Error: #{code} #{message} : #{description}"
+
       @message = message
+      @description = description
+      @code = code
     end
 
-    def inspect
-      vars = self.instance_variables.
-        map{|v| "#{v}=#{instance_variable_get(v).inspect}"}.join(", ")
-      "<#{self.class}: #{vars}>"
-    end
+    # Raised when Eventbrite returns a 4xx HTTP status code
+    class ClientError < self; end
+
+    # Raised when Eventbrite returns the HTTP status code 400
+    class BadRequest < ClientError; end
+
+    # Raised when Eventbrite returns the HTTP status code 401
+    class Unauthorized < ClientError; end
+
+    # Raised when Eventbrite returns the HTTP status code 403
+    class Forbidden < ClientError; end
+
+    # Raised when Eventbrite returns the HTTP status code 404
+    class NotFound < ClientError; end
+
+    # Raised when Eventbrite returns a 5xx HTTP status code
+    class ServerError < self; end
+
+    # Raised when Eventbrite returns the HTTP status code 500
+    class InternalServerError < ServerError; end
   end
 end
