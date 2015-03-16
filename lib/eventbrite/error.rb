@@ -27,12 +27,14 @@ module Eventbrite
       def parse_error(body)
         if body.nil?
           ['', '', nil]
-        else
+        elsif body.kind_of?(Hash)
           [
             body[:error],
             body[:error_description],
             body[:error]
           ]
+        else
+          ['', '', nil]
         end
       end
 
