@@ -6,8 +6,10 @@ module Eventbrite
     module Response
       class RaiseError < Faraday::Response::Middleware
         def on_complete(response)
-          if response[:body] && response[:body][:error]
-            error = Eventbrite::Error.from_response(response)
+          status_code = response.status
+          klass = Eventbrite::Error.errors[status_code]
+          if klass
+            error = klass.from_response(response)
             fail(error)
           end
         end
