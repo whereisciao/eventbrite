@@ -23,7 +23,7 @@ describe Eventbrite::REST::UserOrganizers do
     end
 
     it { should be_kind_of(Eventbrite::Organizer) }
-    it { subject; a_post('/v3/organizers/').with(params).should have_been_made }
+    it { subject; expect(a_post('/v3/organizers/').with(params)).to have_been_made }
   end
 
   describe '.update_user_organizer' do
@@ -41,7 +41,7 @@ describe Eventbrite::REST::UserOrganizers do
     let(:organizer_id) { rand(100) }
 
     it { should be_kind_of(Eventbrite::Organizer) }
-    it { subject; a_post("/v3/organizers/#{organizer_id}/").with(params).should have_been_made }
+    it { subject; expect(a_post("/v3/organizers/#{organizer_id}/").with(params)).to have_been_made }
   end
 
   describe '.list_user_organizers' do
@@ -57,7 +57,7 @@ describe Eventbrite::REST::UserOrganizers do
     end
 
     it_behaves_like 'a cursor'
-    it { subject; a_get('/v3/users/me/organizers/').with(:query => {page:1}).should have_been_made }
+    it { subject; expect(a_get('/v3/users/me/organizers/').with(:query => {page:1})).to have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Organizer) }
   end
 end

@@ -17,7 +17,7 @@ describe Eventbrite::REST::Events do
       end
 
       it_behaves_like 'a cursor'
-      it { subject; a_get('/v3/events/search/').with(:query => {page:1}).should have_been_made }
+      it { subject; expect(a_get('/v3/events/search/').with(:query => {page:1})).to have_been_made }
       its(:first) { should be_a_kind_of(Eventbrite::Event) }
     end
   end
@@ -34,7 +34,7 @@ describe Eventbrite::REST::Events do
     end
 
     it { should be_a_kind_of(Array) }
-    it { subject; a_get('/v3/categories/').should have_been_made }
+    it { subject; expect(a_get('/v3/categories/')).to have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Resource) }
   end
 
@@ -49,7 +49,7 @@ describe Eventbrite::REST::Events do
         )
     end
 
-    it { subject; a_get('/v3/events/123456789/').should have_been_made }
+    it { subject; expect(a_get('/v3/events/123456789/')).to have_been_made }
     it { should be_a_kind_of(Eventbrite::Event) }
   end
 
@@ -66,7 +66,7 @@ describe Eventbrite::REST::Events do
     end
 
     it_behaves_like 'a cursor'
-    it { subject; a_get('/v3/events/123456789/orders/').with(:query => {page:1}).should have_been_made }
+    it { subject; expect(a_get('/v3/events/123456789/orders/').with(:query => {page:1})).to have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Order) }
   end
 
@@ -83,7 +83,7 @@ describe Eventbrite::REST::Events do
     end
 
     it_behaves_like 'a cursor'
-    it { subject; a_get('/v3/events/123456789/attendees/').with(:query => {page:1}).should have_been_made }
+    it { subject; expect(a_get('/v3/events/123456789/attendees/').with(:query => {page:1})).to have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Attendee) }
   end
 
@@ -98,7 +98,7 @@ describe Eventbrite::REST::Events do
         )
     end
 
-    it { subject; a_get('/v3/events/10623123047/attendees/322951239/').should have_been_made }
+    it { subject; expect(a_get('/v3/events/10623123047/attendees/322951239/')).to have_been_made }
     it { should be_a_kind_of(Eventbrite::Attendee) }
   end
 
@@ -115,7 +115,7 @@ describe Eventbrite::REST::Events do
     end
 
     it_behaves_like 'a cursor'
-    it { subject; a_get('/v3/events/123456789/discounts/').with(:query => {page:1}).should have_been_made }
+    it { subject; expect(a_get('/v3/events/123456789/discounts/').with(:query => {page:1})).to have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Discount) }
   end
 
@@ -132,7 +132,7 @@ describe Eventbrite::REST::Events do
     end
 
     it_behaves_like 'a cursor'
-    it { subject; a_get('/v3/events/123456789/access_codes/').with(:query => {page:1}).should have_been_made }
+    it { subject; expect(a_get('/v3/events/123456789/access_codes/').with(:query => {page:1})).to have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::AccessCode) }
   end
 
@@ -149,7 +149,7 @@ describe Eventbrite::REST::Events do
     end
 
     it_behaves_like 'a cursor'
-    it { subject; a_get('/v3/events/123456789/transfers/').with(:query => {page:1}).should have_been_made }
+    it { subject; expect(a_get('/v3/events/123456789/transfers/').with(:query => {page:1})).to have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Transfer) }
   end
 end
