@@ -1,33 +1,48 @@
 module Eventbrite
   class Error < StandardError
-    attr_reader :type, :message
+    attr_reader :message, :description, :code
 
-    def self.from_response(response)
-      error_type, error_message = parse_error(response.body)
-      new(error_type, error_message)
-    end
-
-    def self.parse_error(body)
-      error = body[:error]
-
-      if error.nil?
-        ['', nil]
-      elsif String === error
-        ['', error]
-      else
-        [error[:error_type], error[:error_message]]
+    class << self
+      def from_response(response)
+        message, description, code = parse_error(response.body)
+        new(message, description, code)
       end
+
+      def errors
+        @errors ||= {
+          401 => Eventbrite::Error::Unauthorized
+        }
+
+      end
+
+    private
+      def parse_error(body)
+        if body.nil?
+          ['', '', nil]
+        else
+          [
+            body[:error],
+            body[:error_description],
+            body[:error]
+          ]
+        end
+      end
+
     end
 
-    def initialize(type, message)
-      @type = type
+    def initialize(message = '', description = '', code = nil)
+      super(description)
+
       @message = message
+      @description = description
+      @code = code
     end
 
-    def inspect
-      vars = self.instance_variables.
-        map{|v| "#{v}=#{instance_variable_get(v).inspect}"}.join(", ")
-      "<#{self.class}: #{vars}>"
-    end
+    # Raised when Eventbrite returns a 4xx HTTP status code
+    class ClientError < self; end
+
+    # Raised when Twitter returns the HTTP status code 401
+    class Unauthorized < ClientError; end
+
   end
 end
