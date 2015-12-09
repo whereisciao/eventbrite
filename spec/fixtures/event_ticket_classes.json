@@ -1,0 +1,58 @@
+{
+    "pagination": {
+        "object_count": 2,
+        "page_number": 1,
+        "page_size": 50,
+        "page_count": 1
+    },
+    "ticket_classes": [
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/16247925984/ticket_classes/34587683/",
+            "id": "34587683",
+            "name": "Etudiants",
+            "description": "Ce type de billet s'applique aux d\u00e9veloppeurs , concepteurs et quiconque avec une technique. Etudiants : utiliser le code \u00ab\u00e9tudiant\u00bb et payer seulement 3000 . Vous devrez montrer votre carte d'\u00e9tudiant \u00e0 la porte ",
+            "donation": false,
+            "free": true,
+            "minimum_quantity": 1,
+            "maximum_quantity": null,
+            "maximum_quantity_per_order": 10,
+            "on_sale_status": "AVAILABLE",
+            "quantity_total": 250,
+            "quantity_sold": 25,
+            "sales_start": "2015-12-02T17:59:00Z",
+            "sales_end": "2015-12-10T17:59:00Z",
+            "hidden": false,
+            "include_fee": true,
+            "split_fee": false,
+            "hide_description": false,
+            "auto_hide": false,
+            "variants": [],
+            "has_pdf_ticket": false,
+            "event_id": "16247925984"
+        },
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/16247925984/ticket_classes/34587684/",
+            "id": "34587684",
+            "name": "Professionels",
+            "description": "Ce type de billet applique aux professionels. Vous devrez payer 5000 F",
+            "donation": false,
+            "free": true,
+            "minimum_quantity": 1,
+            "maximum_quantity": null,
+            "maximum_quantity_per_order": 10,
+            "on_sale_status": "UNAVAILABLE",
+            "quantity_total": 30,
+            "quantity_sold": 20,
+            "sales_start": "2015-12-02T17:59:00Z",
+            "sales_end": "2015-12-09T17:59:00Z",
+            "hidden": false,
+            "include_fee": true,
+            "split_fee": false,
+            "hide_description": false,
+            "auto_hide": false,
+            "variants": [],
+            "has_pdf_ticket": false,
+            "event_id": "16247925984"
+        }
+    ]
+}
