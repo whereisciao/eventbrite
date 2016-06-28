@@ -22,6 +22,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'naught', '~> 1.0'
   spec.add_dependency 'equalizer', '~> 0.0.9'
   spec.add_dependency 'money', '> 1.0'
+  spec.add_dependency 'safe_yaml', '~> 1.0.4'
+  spec.add_dependency 'crack', '~> 0.4.3'
   spec.add_development_dependency 'bundler', '~> 1.0'
 
 
