@@ -37,6 +37,7 @@ module Eventbrite
     # @param klass [Class]
     # @return [Eventbrite::Cursor]
     def perform_with_cursor(collection_name, klass = nil)
+      # Fetch first set with perform
       Eventbrite::Cursor.new(perform, collection_name.to_sym, klass, self)
     end
   end
