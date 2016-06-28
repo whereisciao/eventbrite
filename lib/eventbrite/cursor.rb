@@ -35,8 +35,6 @@ module Eventbrite
       @collection
     end
 
-  private
-
     def current_page
       @attrs[:pagination][:page_number] || -1
     end
@@ -62,6 +60,7 @@ module Eventbrite
       self.attrs = response
     end
 
+  private
     # @param attrs [Hash]
     # @return [Hash]
     def attrs=(attrs)
