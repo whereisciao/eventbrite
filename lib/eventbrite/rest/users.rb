@@ -19,7 +19,15 @@ module Eventbrite
       def user_owned_events(*args)
         user, options = parse_args(args)
 
-        perform_with_cursor(:get, :v3, "/v3/users/#{extract_user_id(user)}/owned_events/", options, :events, Eventbrite::Event)
+        begin
+          perform_with_cursor(:get, :v3, "/v3/users/#{extract_user_id(user)}/owned_events/", options, :events, Eventbrite::Event)
+        rescue Eventbrite::Error::BadRequest => e
+          if options[:page] == 1
+            return []
+          else
+            raise e
+          end
+        end
       end
 
       def user_owned_event_orders(*args)

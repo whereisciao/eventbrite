@@ -75,6 +75,24 @@ describe Eventbrite::REST::Users do
       it { subject; expect(a_get('/v3/users/me/owned_events/').with(:query => {page:1})).to have_been_made }
       its(:first) { should be_a_kind_of(Eventbrite::Event) }
     end
+
+    context 'Handle No Events, by catching BAD_PAGE Error' do
+      let(:user) { 1234567 }
+
+      before do
+        stub_get("/v3/users/#{user}/owned_events/").
+          with(:query => {page:1}).
+          to_return(
+            :body => fixture('error_BAD_PAGE.json'),
+            :headers => {:content_type => 'application/json; charset=utf-8'},
+            :status => 400
+          )
+      end
+
+      it { subject; expect(a_get("/v3/users/#{user}/owned_events/").with(:query => {page:1})).to have_been_made }
+      it { should be_a_kind_of(Array) }
+      its(:size) { should eq(0) }
+    end
   end
 
   describe '.user_owned_event_orders' do
