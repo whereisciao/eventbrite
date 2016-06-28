@@ -1,0 +1,5 @@
+{
+    "status_code": 400,
+    "error_description": "You passed an invalid page number.",
+    "error": "BAD_PAGE"
+}

@@ -1,0 +1,77 @@
+{
+    "pagination": {
+        "object_count": 100,
+        "page_number": 1,
+        "page_size": 50,
+        "page_count": 2
+    },
+    "events": [
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/events/10583189605/",
+            "name": {
+                "text": "API Test Example",
+                "html": "API Test Example"
+            },
+            "description": {
+                "text": "Test Description",
+                "html": "<p>Test Description</p>"
+            },
+            "organizer": {
+                "description": {
+                    "text": "Description of the Example Organizer",
+                    "html": "<p>Description of the Example Organizer</p>"
+                },
+                "id": "1667263718",
+                "name": "Example Organizer"
+            },
+        "venue": {
+            "id": "545454",
+            "address": {
+                "city": "San Francisco",
+                "country": "US",
+                "region": "CA",
+                "address_1": "651 Brannan",
+                "address_2": "Suite 110",
+                "country_name": "United States"
+            },
+            "latitude": "42.3618641",
+            "longitude": "-71.0905626",
+            "name": "Eventbrite HQ"
+        },
+            "ticket_classes": [
+                {
+                    "id": "23511645",
+                    "name": "General Admission",
+                    "cost": null,
+                    "fee": null,
+                    "currency": null,
+                    "free": true,
+                    "minimum_quantity": 1,
+                    "maximum_quantity": null,
+                    "quantity_total": 1000,
+                    "quantity_sold": 1,
+                    "sales_start": null,
+                    "sales_end": "2014-03-22T18:00:00Z"
+                }
+            ],
+            "id": "10583189605",
+            "url": "http://www.eventbrite.com/e/api-test-example-tickets-10583189605",
+            "start": {
+                "timezone": "America/New_York",
+                "local": "2013-08-17T06:30:00",
+                "utc": "2013-08-17T10:30:00Z"
+            },
+            "end": {
+                "timezone": "America/New_York",
+                "local": "2013-08-17T17:00:00",
+                "utc": "2013-08-17T21:00:00Z"
+            },
+            "created": "2014-02-10T18:51:45Z",
+            "changed": "2014-02-10T18:51:48Z",
+            "timezone": "America/Los_Angeles",
+            "capacity": 1000,
+            "categories": [],
+            "status": "live"
+        }
+    ]
+}
