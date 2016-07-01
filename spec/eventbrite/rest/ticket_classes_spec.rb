@@ -1,4 +1,4 @@
-describe Eventbrite::REST::TicketClasses, focus: true do
+describe Eventbrite::REST::TicketClasses do
   let(:client) { Eventbrite::REST::Client.new(oauth_token:"TOKEN") }
 
   describe '.event_ticket_classes' do

@@ -20,7 +20,7 @@ group :test do
   gem 'rubocop', '>= 0.20', :platforms => [:ruby_19, :ruby_20, :ruby_21]
   gem 'simplecov', :require => false
   gem 'timecop', '0.6.1'
-  gem 'webmock'
+  gem 'webmock', '1.17.4'
   gem 'yardstick'
   gem 'guard'
   gem 'guard-rspec'
