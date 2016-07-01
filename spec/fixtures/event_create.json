@@ -1,0 +1,49 @@
+{
+  "name": {
+    "text": "CHAU TEST",
+    "html": "CHAU TEST"
+  },
+  "description": {
+    "text": null,
+    "html": null
+  },
+  "id": "26315524442",
+  "url": "http://www.eventbrite.com/e/chau-test-tickets-26315524442",
+  "start": {
+    "timezone": "America/Los_Angeles",
+    "local": "2016-07-04T09:11:51",
+    "utc": "2016-07-04T16:11:51Z"
+  },
+  "end": {
+    "timezone": "America/Los_Angeles",
+    "local": "2016-06-28T09:00:48",
+    "utc": "2016-06-28T16:00:48Z"
+  },
+  "created": "2016-06-28T23:39:50Z",
+  "changed": "2016-06-28T23:39:50Z",
+  "capacity": 0,
+  "status": "draft",
+  "currency": "USD",
+  "listed": true,
+  "shareable": false,
+  "invite_only": false,
+  "online_event": false,
+  "show_remaining": false,
+  "tx_time_limit": null,
+  "hide_start_date": null,
+  "hide_end_date": null,
+  "locale": "en_US",
+  "is_locked": false,
+  "privacy_setting": "unlocked",
+  "is_series": false,
+  "is_series_parent": false,
+  "is_reserved_seating": false,
+  "logo_id": null,
+  "organizer_id": "10914730006",
+  "venue_id": null,
+  "category_id": null,
+  "subcategory_id": null,
+  "format_id": null,
+  "resource_uri": "https://www.eventbriteapi.com/v3/events/26315524442/",
+  "logo": null
+}

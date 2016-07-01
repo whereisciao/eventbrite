@@ -16,6 +16,10 @@ module Eventbrite
         perform_with_objects(:get, :v3, "/v3/categories/", options, :categories, Eventbrite::Resource)
       end
 
+      def event_create(options = {})
+        perform_with_object(:post, :v3, "/v3/events/", options, Eventbrite::Event)
+      end
+
       def event_details(event, options = {})
         perform_with_object(:get, :v3, "/v3/events/#{extract_id(event)}/", options, Eventbrite::Event)
       end

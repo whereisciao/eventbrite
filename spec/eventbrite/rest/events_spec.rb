@@ -152,4 +152,45 @@ describe Eventbrite::REST::Events do
     it { subject; expect(a_get('/v3/events/123456789/transfers/').with(:query => {page:1})).to have_been_made }
     its(:first) { should be_a_kind_of(Eventbrite::Transfer) }
   end
+
+  describe '.event_create' do
+    subject { client.event_create(event_params) }
+
+    let(:event_params) {
+      {
+        "event.name.html" => event_name_html,
+        "event.start.utc" => event_start_utc,
+        "event.start.timezone" => event_start_timezone,
+        "event.end.utc" => event_end_utc,
+        "event.end.timezone" => event_end_timezone,
+        "event.currency" => event_currency
+      }
+    }
+
+    let(:event_name_html) { "CHAU TEST" }
+    let(:event_start_utc) { "2016-07-04T16:11:51Z" }
+    let(:event_start_timezone) { "America/Los_Angeles" }
+    let(:event_end_utc) { "2016-06-28T16:00:48Z" }
+    let(:event_end_timezone) { "America/Los_Angeles" }
+    let(:event_currency) { "USD" }
+
+    before do
+      stub_post('/v3/events/').
+      with(body: event_params).
+      to_return(
+        :body => fixture('event_create.json'),
+        :headers => {:content_type => 'application/json; charset=utf-8'}
+      )
+    end
+
+    it { subject; expect(a_post('/v3/events/')).to have_been_made }
+    it { should be_a_kind_of(Eventbrite::Event) }
+    its("name.html") { should eq(event_name_html) }
+    let("start.utc") { "2016-07-04T16:11:51Z" }
+    let("start.timezone") { "America/Los_Angeles" }
+    let("end.utc") { "2016-06-28T16:00:48Z" }
+    let("end.timezone") { "America/Los_Angeles" }
+    let("currency") { "USD" }
+
+  end
 end
